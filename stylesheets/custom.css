@@ -1,5 +1,6 @@
 html {
-	background-color: #1975FF;
+	/*background-color: #1975FF;*/
+	background-color: #282828;
 	font-family: 'Questrial', sans-serif;
 	overflow-x: hidden;
 }
@@ -14,7 +15,7 @@ a {
 
 .viewport-name {
 	margin: 0;
-	padding-top: 48px;
+	padding-top: 42px;
 	border: 1px solid transparent;
 	background-color: #282828;
 }
@@ -79,30 +80,6 @@ a {
 	width: 78%;
 }
 
-@media all and (max-device-width: 800px), (max-width: 800px) {
-	.ctr-img-txt {
-		font-size: 11vw;
-	}
-	.hello-world-txt {
-	width: 74%;
-	height: 25%;
-	color: #19FF19;
-	}
-
-	.adventure-txt {
-	  width: 56%;
-	}
-
-	.photography-txt {
-		width: 72%;
-	}
-}
-
-
-@media all and (max-device-width: 600px), (max-width: 600px) {
-
-}
-
 nav {
 	position: fixed;
 	float: left;
@@ -144,9 +121,81 @@ footer {
 	margin: 0 auto;
 	margin-top: 16px;
 	width: 95%;
-	border-top: 1px solid rgba(64, 64, 64, 0.8);
+	border-top: 1px solid #FFFFFF
 }
 
 footer p {
 	margin: 8px 0 8px 0;
+	color: #FFFFFF;
+}
+
+@media all and (max-device-width: 1060px), (max-width: 1060px) {
+	nav ul {
+		width: 760px;
+	}
+
+	nav ul li {
+		padding-left: 36px;
+		padding-right: 36px;
+	}
+
+	nav ul li a {
+		font-size: 24px;
+	}
+}
+
+@media all and (max-device-width: 800px), (max-width: 800px) {
+	.ctr-img-txt {
+		font-size: 11vw;
+	}
+
+	.hello-world-txt {
+		width: 74%;
+		height: 25%;
+		color: #19FF19;
+	}
+
+	.adventure-txt {
+	  width: 56%;
+	}
+
+	.photography-txt {
+		width: 72%;
+	}
+
+	nav ul {
+		width: 560px;
+	}
+
+	nav ul li {
+		padding-left: 24px;
+		padding-right: 24px;
+	}
+
+	nav ul li a {
+		font-size: 20px;
+	}
+}
+
+@media all and (max-device-width: 600px), (max-width: 600px) {
+	.viewport-name {
+		padding-top: 36px;
+	}
+
+	.viewport-name h1 {
+		font-size: 32px;
+	}
+
+	nav ul {
+		width: 360px;
+	}
+
+	nav ul li {
+		padding-left: 16px;
+		padding-right: 16px;
+	}
+
+	nav ul li a {
+		font-size: 12px;
+	}
 }
