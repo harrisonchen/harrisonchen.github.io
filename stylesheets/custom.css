@@ -13,6 +13,10 @@ a {
 	text-decoration: none;
 }
 
+.main-layout {
+	background-color: #282828;
+}
+
 .viewport-name {
 	margin: 0;
 	padding-top: 42px;
@@ -78,6 +82,50 @@ a {
 
 .photography-txt {
 	width: 78%;
+}
+
+.about-me {
+	border: 1px solid #282828;
+	margin: 0 auto;
+	width: 840px;
+	height: 680px;
+	background-color: white;
+}
+
+.nav-filler {
+	background-color: #282828;
+	width: 840px;
+	height: 47px;
+}
+
+.profile-pic {
+	float: left;
+	border-bottom-right-radius: 50%;
+	width: 360px;
+	height: 360px;
+	padding-right: 8px;
+}
+
+.bio {
+	margin: 0;
+	padding: 8px;
+}
+
+.home-btn {
+	float: left;
+	width: 45px;
+	height: 45px;
+	background-image: url("../images/home.png");
+	background-size: 100% 100%;
+	-webkit-transition: background-image 0.25s ease-in-out;
+	-moz-transition: background-image 0.25s ease-in-out;
+	-ms-transition: background-image 0.25s ease-in-out;
+	-o-transition: background-image 0.25s ease-in-out;
+	transition: background-image 0.25s ease-in-out;
+}
+
+.home-btn:hover {
+	background-image: url("../images/home-hover.png");
 }
 
 nav {
