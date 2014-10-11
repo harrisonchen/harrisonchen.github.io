@@ -116,7 +116,7 @@ nav {
 
 nav ul {
 	display: block;
-	width: 779px;
+	width: 900px;
 	margin: 0 auto;
 	padding: 8px;
 	list-style-type: none;
@@ -124,8 +124,8 @@ nav ul {
 
 nav ul li {
 	display: inline;
-	padding-left: 84px;
-	padding-right: 84px;
+	padding-left: 64px;
+	padding-right: 64px;
 }
 
 nav ul li a {
