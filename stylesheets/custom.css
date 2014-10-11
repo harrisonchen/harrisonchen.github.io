@@ -83,6 +83,19 @@ a {
 	.ctr-img-txt {
 		font-size: 11vw;
 	}
+	.hello-world-txt {
+	width: 74%;
+	height: 25%;
+	color: #19FF19;
+	}
+
+	.adventure-txt {
+	  width: 56%;
+	}
+
+	.photography-txt {
+		width: 72%;
+	}
 }
 
 
