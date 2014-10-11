@@ -81,7 +81,7 @@ a {
 
 @media all and (max-device-width: 800px), (max-width: 800px) {
 	.ctr-img-txt {
-		font-size: 140px;
+		font-size: 11vw;
 	}
 }
 
