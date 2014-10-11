@@ -89,23 +89,27 @@ a {
 	margin: 0 auto;
 	width: 840px;
 	height: 680px;
+	/*border: 1px solid green;*/
 	background-color: #282828;
 }
 
 .profile-pic-ctn {
+	position: relative;
 	width: 840px;
 	height: 360px;
+	/*border: 2px solid red;*/
 }
 
 .profile-pic-cap {
+	font-size: 34px;
 	width: 360px;
 	height: 360px;
 	background-color: #282828;
-	padding: 8px;
 	color: white;
+	/*border: 1px solid green;*/
 	position: absolute;
   top: 0;
-  bottom: 260px;
+  bottom: 0;
   left: 360px;
   right: 0;
   height: 10%;
