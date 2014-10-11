@@ -116,7 +116,7 @@ nav {
 
 nav ul {
 	display: block;
-	width: 900px;
+	width: 1100px;
 	margin: 0 auto;
 	padding: 8px;
 	list-style-type: none;
@@ -129,8 +129,15 @@ nav ul li {
 }
 
 nav ul li a {
-	color: #FFFFFF;
+	color: #B0B0B0;
 	font-size: 28px;
+	transition-property: color;
+	transition-duration: .25s;
+	transition-delay: 0s;
+}
+
+nav ul li a:hover {
+	color: #FFFFFF;
 }
 
 footer {
