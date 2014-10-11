@@ -89,18 +89,32 @@ a {
 	margin: 0 auto;
 	width: 840px;
 	height: 680px;
-	background-color: white;
+	background-color: #282828;
 }
 
-.nav-filler {
-	background-color: #282828;
+.profile-pic-ctn {
 	width: 840px;
-	height: 47px;
+	height: 360px;
+}
+
+.profile-pic-cap {
+	width: 360px;
+	height: 360px;
+	background-color: #282828;
+	padding: 8px;
+	color: white;
+	position: absolute;
+  top: 0;
+  bottom: 260px;
+  left: 360px;
+  right: 0;
+  height: 10%;
+  margin: auto;
 }
 
 .profile-pic {
 	float: left;
-	border-bottom-right-radius: 50%;
+	border-radius: 50%;
 	width: 360px;
 	height: 360px;
 	padding-right: 8px;
@@ -109,12 +123,14 @@ a {
 .bio {
 	margin: 0;
 	padding: 8px;
+	color: white;
 }
 
 .home-btn {
 	float: left;
-	width: 45px;
-	height: 45px;
+	width: 48px;
+	height: 48px;
+	margin: 0;
 	background-image: url("../images/home.png");
 	background-size: 100% 100%;
 	-webkit-transition: background-image 0.25s ease-in-out;
@@ -126,6 +142,12 @@ a {
 
 .home-btn:hover {
 	background-image: url("../images/home-hover.png");
+}
+
+.nav-filler {
+	background-color: #282828;
+	width: 840px;
+	height: 49px;
 }
 
 nav {
