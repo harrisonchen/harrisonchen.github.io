@@ -1,0 +1,89 @@
+html {
+	background-color: #1975FF;
+	font-family: 'Questrial', sans-serif;
+	overflow-x: hidden;
+}
+
+body {
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+.viewport-white {
+	margin: 0;
+	padding-top: 48px;
+	background-color: rgba(255, 255, 255, 0.5);
+	border: 1px solid transparent;
+}
+
+.viewport-white h1 {
+	text-align: center;
+	font-size: 64px;
+}
+
+.viewport-photography {
+	position: relative;
+	border: 1px solid black;
+	background-image: url("../images/gospel-rock-panorama.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	width: 100vw;
+	height: 50vw;
+}
+
+.ctr-img-txt {
+	color: rgba(255, 255, 255, 0.75);
+	font-size: 192px;
+	position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 62%;
+  height: 30%;
+  margin: auto;
+}
+
+nav {
+	position: fixed;
+	float: left;
+	background-color: rgba(0, 0, 0, 0.65);
+	border: 1px solid transparent;
+	display: inline-block;
+	width: 100%;
+	border: 1px solid black;
+	z-index: 10;
+}
+
+nav ul {
+	display: block;
+	width: 779px;
+	margin: 0 auto;
+	padding: 8px;
+	list-style-type: none;
+}
+
+nav ul li {
+	display: inline;
+	padding-left: 84px;
+	padding-right: 84px;
+}
+
+nav ul li a {
+	color: #FFFFFF;
+	font-size: 28px;
+}
+
+footer {
+	margin: 0 auto;
+	margin-top: 16px;
+	width: 95%;
+	border-top: 1px solid rgba(64, 64, 64, 0.8);
+}
+
+footer p {
+	margin: 8px 0 8px 0;
+}
