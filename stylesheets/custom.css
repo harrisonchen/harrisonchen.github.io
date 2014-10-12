@@ -19,14 +19,24 @@ a {
 
 .project-list li {
 	float: left;
-	opacity: 0.1;
+	opacity: 0;
 	margin: 32px;
 	margin-top: 200px;
-	-webkit-transition: all 0.4s ease-in-out;
-	-moz-transition: all 0.4s ease-in-out;
-	-ms-transition: all 0.4s ease-in-out;
-	-o-transition: all 0.4s ease-in-out;
-	transition: all 0.4s ease-in-out;
+	-webkit-transition-property: all, opacity;
+	-moz-transition-property: all opacity;
+	-ms-transition-property: all opacity;
+	-o-transition-property: all opacity;
+	transition-property: all opacity;
+	-webkit-transition-duration: 0.5s, 1.25s;
+	-moz-transition-duration: 0.5s 1s;
+	-ms-transition-duration: 0.5s 1s;
+	-o-transition-duration: 0.5s 1s;
+	transition-duration: 0.5s 1s;
+	-webkit-transition-timing-function: ease-in-out, ease-in-out;
+	-moz-transition-timing-function: ease-in-out ease-in-out;
+	-ms-transition-timing-function: ease-in-out ease-in-out;
+	-o-transition-timing-function: ease-in-out ease-in-out;
+	transition-timing-function: ease-in-out ease-in-out;
 }
 
 .pull-up {
