@@ -68,23 +68,28 @@ app.directive('vpParallax', function($window){
 			$scope.vpBikePos = $scope.vpBike[0].offsetTop;
 
 			var finishScroll = false;
+			var vp = [false, false, false];
 
 			$scope.vpParallax = function(){
-				if($scope.scrollPos + window.innerHeight >= $scope.vpBikePos){
+				if(!vp[2] && $scope.scrollPos + window.innerHeight >= $scope.vpBikePos){
 					$scope.vpAdventure.addClass("viewport-img-expand");
 					$scope.vpPhotography.addClass("viewport-img-expand");
 					$scope.vpBike.addClass("viewport-img-expand");
 					finishScroll = true;
+					vp[2] = true;
 				}
-				else if($scope.scrollPos + window.innerHeight >= $scope.vpPhotographyPos){
+				else if(!vp[1] && $scope.scrollPos + window.innerHeight >= $scope.vpPhotographyPos){
+					$scope.vpAdventure.addClass("viewport-img-expand");
 					$scope.vpPhotography.addClass("viewport-img-expand");
 					$scope.vpBike = angular.element(document.querySelector('#vp-bike'));
 					$scope.vpBikePos = $scope.vpBike[0].offsetTop;
+					vp[1] = true;
 				}
-				else if($scope.scrollPos + window.innerHeight >= $scope.vpAdventurePos){
+				else if(!vp[0] && $scope.scrollPos + window.innerHeight >= $scope.vpAdventurePos){
 					$scope.vpAdventure.addClass("viewport-img-expand");
 					$scope.vpPhotography = angular.element(document.querySelector('#vp-photography'));
 					$scope.vpPhotographyPos = $scope.vpPhotography[0].offsetTop;
+					vp[0] = true;
 				}
 			}
 
