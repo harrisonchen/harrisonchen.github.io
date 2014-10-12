@@ -29,7 +29,7 @@ app.directive('mainNav', function(){
 	}
 });
 
-app.directive('vpParallax', function($window){
+app.directive('vpParallax', ['$window', function($window){
 	return{
 		restrict: 'AE',
 		template: 
@@ -106,27 +106,27 @@ app.directive('vpParallax', function($window){
 			
 		}
 	}
-});
+}]);
 
 app.directive('project', function(){
 	return{
 		restrict: 'AE',
 		scope: {
-			title: '@',
+			label: '@',
 			description: '@',
 			image: '@',
 			linkTo: '@'
 		},
 		template: 
-			'<a href="{{linkTo}}">' +
-				'<div class="project-ctn">' +
-					'<img class="project-img" src="{{image}}"/>' +
+			'<div class="project-ctn">' +
+				'<a href="{{linkTo}}">' +
+					'<img class="project-img" src="{{image}}" />' +
 					'<div class="project-description">' +
-						'<h1>{{title}}</h1>' +
+						'<h1>{{label}}</h1>' +
 						'<p>{{description}}</p>' +
 					'</div>' +
-				'</div>' +
-			'</a>',
+				'</a>' +
+			'</div>',
 		controller: function($scope, $element){
 			
 		},
@@ -135,3 +135,45 @@ app.directive('project', function(){
 		}
 	}
 });
+
+app.directive('projectList', ['$window', function($window){
+	return{
+		restrict: 'AE',
+		scope: {},
+		transclude: true,
+		template: '<div ng-transclude></div>',
+		controller: function($scope, $element){
+
+			$scope.scrollPos = window.top.scrollY;
+			var finishScroll = false;
+
+			$scope.projectScroll = function(){
+				for(var i = 0; i < $scope.projectElms.length; ++i){
+					if(!$scope.projectTags[i] &&
+						 $scope.scrollPos + window.innerHeight >= $scope.projectElms[i][0].offsetTop){
+						$scope.projectElms[i].addClass('pull-up');
+						$scope.projectTags[i] = true;
+					}
+				}
+			}
+
+			angular.element($window).bind("scroll", function(e){
+				if(!finishScroll){
+					$scope.scrollPos = window.top.scrollY;
+					$scope.projectScroll();
+				}
+			});
+		},
+		link: function(scope, element, attrs){
+			scope.projects = element[0].getElementsByTagName('li');
+			scope.projectElms = [];
+			scope.projectTags = [];
+			for(var i = 0; i < scope.projects.length; ++i){
+				scope.projectElms.push(angular.element(scope.projects[i]));
+				scope.projectTags.push(false);
+			}
+
+			scope.projectScroll();
+		}
+	}
+}]);
