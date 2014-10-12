@@ -45,6 +45,9 @@ a {
 	position: relative;
 	width: 100vw;
 	-webkit-filter: blur(5px);
+	-moz-filter: blur(5px);
+	-ms-filter: blur(5px);
+	-o-filter: blur(5px);
 	height: 75vw;
 }
 
