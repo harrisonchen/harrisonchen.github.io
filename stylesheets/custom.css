@@ -44,6 +44,7 @@ a {
 .viewport-img {
 	position: relative;
 	width: 100vw;
+	-webkit-filter: blur(5px);
 	height: 75vw;
 }
 
@@ -55,6 +56,12 @@ a {
 .viewport-img img {
 	width: 100%;
 	height: 100%;
+
+}
+
+.viewport-img:hover {
+	-webkit-filter: blur(0px);
+
 }
 
 .ctr-img-txt {
