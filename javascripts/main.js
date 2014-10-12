@@ -29,6 +29,27 @@ app.directive('mainNav', function(){
 	}
 });
 
+app.directive('coverView', function(){
+	return{
+		restrict: 'AE',
+		template: 
+			'<div class="about-me">' +
+				'<div class="profile-pic-ctn">' +
+					'<img src="images/prof-pic.jpg" alt="Harrison Chen"' +
+						 'class="profile-pic" />' +
+					'<div class="profile-pic-cap">Hi my name is Harrison!</div>' +
+					'<!-- <h1 class="bio"></h1> -->' +
+				'</div>' +
+			'</div>',
+		controller: function($scope, $element){
+
+		},
+		link: function(scope, element, attrs){
+
+		}
+	}
+});
+
 app.directive('vpParallax', ['$window', function($window){
 	return{
 		restrict: 'AE',

@@ -209,7 +209,14 @@ a {
 	position: relative;
 	width: 840px;
 	height: 360px;
-	/*border: 2px solid red;*/
+
+	-webkit-animation: pull-up 0.5s;
+	animation: pull-up 0.5s;
+}
+
+@-webkit-keyframes pull-up {
+	from { margin-top: 100px; opacity: 0; }
+	to { opacity: 1}
 }
 
 .profile-pic-cap {
@@ -231,9 +238,31 @@ a {
 .profile-pic {
 	float: left;
 	border-radius: 50%;
-	width: 360px;
+	width: 360px; /* should be 360px; */
 	height: 360px;
 	padding-right: 8px;
+
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+
+	-webkit-animation: stretch 0.5s;
+	animation: stretch 0.5s;
+}
+
+@-webkit-keyframes stretch {
+	from { width: 0px; }
+	to { width: 360px; }
+}
+
+.profile-pic:hover {
+	width: 380px;
+}
+
+.width360px {
+	width: 360px;
 }
 
 .bio {
