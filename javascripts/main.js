@@ -92,7 +92,6 @@ app.directive('vpParallax', function($window){
 
 			angular.element($window).bind("scroll", function(e){
 				if(!finishScroll){
-					console.log($scope.scrollPos);
 					$scope.scrollPos = window.top.scrollY;
 					$scope.vpParallax();
 				}
@@ -100,6 +99,34 @@ app.directive('vpParallax', function($window){
 		},
 		link: function(scope, element, attrs){
 			
+		}
+	}
+});
+
+app.directive('project', function(){
+	return{
+		restrict: 'AE',
+		scope: {
+			title: '@',
+			description: '@',
+			image: '@',
+			linkTo: '@'
+		},
+		template: 
+			'<a href="{{linkTo}}">' +
+				'<div class="project-ctn">' +
+					'<img class="project-img" src="{{image}}"/>' +
+					'<div class="project-description">' +
+						'<h1>{{title}}</h1>' +
+						'<p>{{description}}</p>' +
+					'</div>' +
+				'</div>' +
+			'</a>',
+		controller: function($scope, $element){
+			
+		},
+		link: function(scope, element, attrs){
+
 		}
 	}
 });
