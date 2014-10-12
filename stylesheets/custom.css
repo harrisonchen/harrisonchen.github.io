@@ -87,11 +87,15 @@ a {
 }
 
 .adventure-txt {
-  width: 62%;
+  width: 68%;
 }
 
 .photography-txt {
-	width: 78%;
+	width: 84%;
+}
+
+.bike-txt {
+	width: 32%;
 }
 
 .about-me {
@@ -230,6 +234,10 @@ footer p {
 
 	.photography-txt {
 		width: 72%;
+	}
+
+	.bike-txt {
+		width: 20%;
 	}
 
 	nav ul {
