@@ -113,7 +113,7 @@ a {
 	border: 1px solid #282828;
 	margin: 0 auto;
 	width: 840px;
-	height: 680px;
+	/*height: 680px;*/
 	/*border: 1px solid green;*/
 	background-color: #282828;
 }
@@ -176,7 +176,8 @@ a {
 .nav-filler {
 	background-color: #282828;
 	width: 840px;
-	height: 49px;
+	/*height: 49px;*/
+	height: 64px;
 }
 
 .dropdown-btn {
