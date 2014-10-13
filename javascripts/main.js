@@ -14,8 +14,8 @@ app.directive('mainNav', function(){
 										'<ul>' +
 											'<li><a href="">Photography</a></li>' +
 											'<li><a href="">Videos</a></li>' +
-											'<li><a href="https://www.linkedin.com/in/harrisonwchen">LinkedIn</li>' +
-											'<li><a href="https://github.com/HarrisonChen">GitHub</li>' +
+											'<li><a href="https://www.linkedin.com/in/harrisonwchen" target="_blank">LinkedIn</li>' +
+											'<li><a href="https://github.com/HarrisonChen" target="_blank">GitHub</li>' +
 										'</ul>' +
 									'</li>' +
 								'</ul>' +
