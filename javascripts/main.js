@@ -12,7 +12,7 @@ app.directive('mainNav', function(){
 									'<li class="dropdown-btn">' +
 										'<a href="">Explore&darr;</a>' +
 										'<ul>' +
-											'<li><a href="">Photography</a></li>' +
+											'<li><a href="photography.html">Photography</a></li>' +
 											'<li><a href="">Videos</a></li>' +
 											'<li><a href="https://www.linkedin.com/in/harrisonwchen" target="_blank">LinkedIn</li>' +
 											'<li><a href="https://github.com/HarrisonChen" target="_blank">GitHub</li>' +
@@ -198,6 +198,37 @@ app.directive('projectList', ['$window', function($window){
 			}
 
 			scope.projectScroll();
+		}
+	}
+}]);
+
+app.directive('instagramPhotos', ['$http', function($http){
+	return {
+		restrict: 'AE',
+		template: '<div class="instagram-photos">' +
+								'<ul>' +
+									'<li ng-repeat="photo in instagramPhotos">' +
+										'<img src="{{photo}}" />' +
+									'<li>' +
+								'<ul>' +
+							'</div>',
+		controller: function($scope, $element){
+
+			$scope.instagramObject;
+			$scope.instagramPhotos = [];
+
+			var instagramApiLink = 'https://api.instagram.com/v1/users/5063518/media/recent/?client_id=341f861fb8eb48a789828a4026d2defa'
+			$http.get(instagramApiLink)
+			.success(function(data){
+				$scope.instagramObject = data['data'];
+				for(var i = 0; i < $scope.instagramObject.length; ++i){
+					$scope.instagramPhotos.push($scope.instagramObject[i].images.standard_resolution.url);
+				}
+				console.log($scope.instagramPhotos);
+			});
+		},
+		link: function(scope, element, attrs){
+
 		}
 	}
 }]);

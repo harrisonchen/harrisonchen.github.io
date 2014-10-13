@@ -175,7 +175,7 @@ a {
   right: 0;
   height: 18%;
   margin: auto;
-	text-shadow: 0 0 16px rgba(255, 255, 255, 0.8);;
+	text-shadow: 0 0 16px rgba(255, 255, 255, 0.8);
 }
 
 .hello-world-txt {
@@ -473,7 +473,7 @@ section.module.parallax h1 {
   bottom: 0;
   height: 142px;
   margin: auto;
-	text-shadow: 0 0 16px rgba(255, 255, 255, 0.8);;
+	text-shadow: 0 0 16px rgba(255, 255, 255, 0.8);
 }
 
 section.module.parallax-1 {
@@ -504,4 +504,18 @@ section.module.parallax-3 {
     font-size: 160px;
   	height: 158px;
   }
+}
+
+.instagram-photos ul {
+	list-style-type: none;
+}
+
+.instagram-photos li {
+	margin: 8px;
+	float: left;
+}
+
+.instagram-photos img {
+	width: 250px;
+	height: 250px;
 }
