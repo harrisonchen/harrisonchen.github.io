@@ -174,6 +174,9 @@ app.directive('projectList', ['$window', function($window){
 						 $scope.scrollPos + window.innerHeight >= $scope.projectElms[i][0].offsetTop){
 						$scope.projectElms[i].addClass('pull-up');
 						$scope.projectTags[i] = true;
+						if(i == $scope.projectElms.length - 1){
+							finishScroll = true;
+						}
 					}
 				}
 			}
