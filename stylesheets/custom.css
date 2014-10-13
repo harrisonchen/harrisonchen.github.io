@@ -175,6 +175,7 @@ a {
   right: 0;
   height: 18%;
   margin: auto;
+	text-shadow: 0 0 16px rgba(255, 255, 255, 0.8);;
 }
 
 .hello-world-txt {
@@ -438,4 +439,68 @@ footer p {
 	nav ul li a {
 		font-size: 18px;
 	}
+}
+
+.container {
+  max-width: 960px;
+  height: 720px;
+  margin: 0 auto;
+}
+
+section.module:last-child {
+  margin-bottom: 0;
+}
+
+section.module p {
+  margin-bottom: 40px;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+section.module.parallax {
+  height: 600px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+section.module.parallax h1 {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 48px;
+  line-height: 600px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+	text-shadow: 0 0 16px rgba(255, 255, 255, 0.8);;
+}
+
+section.module.parallax-1 {
+  background-image: url("../images/gospel-rock-panorama.jpg");
+}
+
+section.module.parallax-2 {
+  background-image: url("../images/golden-gate-bridge.jpg");
+}
+
+section.module.parallax-3 {
+  background-image: url("../images/mtb-1.jpg");
+}
+
+@media all and (min-width: 600px) {
+  section.module h2 {
+    font-size: 42px;
+  }
+  section.module p {
+    font-size: 20px;
+  }
+  section.module.parallax h1 {
+    font-size: 96px;
+  }
+}
+
+@media all and (min-width: 960px) {
+  section.module.parallax h1 {
+    font-size: 160px;
+  }
 }
