@@ -23,14 +23,14 @@ a {
 	margin: 32px;
 	margin-top: 200px;
 	-webkit-transition-property: margin-top, opacity;
-	-moz-transition-property: all, opacity;
-	-ms-transition-property: all, opacity;
-	-o-transition-property: all, opacity;
+	-moz-transition-property: margin-top, opacity;
+	-ms-transition-property: margin-top, opacity;
+	-o-transition-property: margin-top, opacity;
 	transition-property: margin-top, opacity;
 	-webkit-transition-duration: 0.75s, 1.25s;
-	-moz-transition-duration: 0.5s, 1.25s;
-	-ms-transition-duration: 0.5s, 1.25s;
-	-o-transition-duration: 0.5s, 1.25s;
+	-moz-transition-duration: 0.75s, 1.25s;
+	-ms-transition-duration: 0.75s, 1.25s;
+	-o-transition-duration: 0.75s, 1.25s;
 	transition-duration: 0.75s, 1.25s;
 	-webkit-transition-timing-function: ease-in-out, ease-in-out;
 	-moz-transition-timing-function: ease-in-out, ease-in-out;
@@ -65,6 +65,8 @@ a {
 	width: 360px;
 	height: 480px;
 	position: relative;
+	border-top-left-radius: 5%;
+	border-top-right-radius: 5%;
 }
 
 .project-description {
@@ -521,20 +523,20 @@ section.module.parallax-3 {
 	height: 250px;
 	opacity: 0;
 	border-radius: 50%;
-	-webkit-transition-property: box-shadow, opacity;
-	-moz-transition-property: box-shadow, opacity;
-	-ms-transition-property: box-shadow, opacity;
-	-o-transition-property: box-shadow, opacity;
+	-webkit-transition-property: box-shadow, opacity, border-radius;
+	-moz-transition-property: box-shadow, opacity, border-radius;
+	-ms-transition-property: box-shadow, opacity, border-radius;
+	-o-transition-property: box-shadow, opacity, border-radius;
 	transition-property: box-shadow, opacity, border-radius;
-	-webkit-transition-duration: 0.25s, 0.65s;
-	-moz-transition-duration: 0.25s, 0.65s;
-	-ms-transition-duration: 0.25s, 0.65s;
-	-o-transition-duration: 0.25s, 0.65s;
+	-webkit-transition-duration: 0.25s, 0.65s, 0.5s;
+	-moz-transition-duration: 0.25s, 0.65s, 0.5s;
+	-ms-transition-duration: 0.25s, 0.65s, 0.5s;
+	-o-transition-duration: 0.25s, 0.65s, 0.5s;
 	transition-duration: 0.25s, 0.65s, 0.5s;
-	-webkit-transition-timing-function: ease-in-out, ease-in-out;
-	-moz-transition-timing-function: ease-in-out, ease-in-out;
-	-ms-transition-timing-function: ease-in-out, ease-in-out;
-	-o-transition-timing-function: ease-in-out, ease-in-out;
+	-webkit-transition-timing-function: ease-in-out, ease-in-out, ease-in-out;
+	-moz-transition-timing-function: ease-in-out, ease-in-out, ease-in-out;
+	-ms-transition-timing-function: ease-in-out, ease-in-out, ease-in-out;
+	-o-transition-timing-function: ease-in-out, ease-in-out, ease-in-out;
 	transition-timing-function: ease-in-out, ease-in-out, ease-in-out;
 }
 

@@ -237,7 +237,7 @@ app.directive('instaPhoto', ['$window', '$compile', function($window, $compile){
 	}
 }]);
 
-app.directive('instagramPhotos', ['$http', function($http){
+app.directive('instagramPhotos', ['$http', '$q', function($http, $q){
 	return {
 		restrict: 'AE',
 		scope: {},
@@ -253,15 +253,39 @@ app.directive('instagramPhotos', ['$http', function($http){
 			$scope.instagramObject;
 			$scope.instagramPhotos = [];
 
-			var instagramApiLink = 'https://api.instagram.com/v1/users/5063518/media/recent/?client_id=341f861fb8eb48a789828a4026d2defa&count=50';
+			var instagramApiLink = 'https://api.instagram.com/v1/users/5063518/media/recent/?client_id=341f861fb8eb48a789828a4026d2defa';
+			var count = 0;
+			var async_ready = true;
 
-			$http.get(instagramApiLink)
-			.success(function(data){
-				$scope.instagramObject = data['data'];
-				for(var i = 0; i < $scope.instagramObject.length; ++i){
-					$scope.instagramPhotos.push($scope.instagramObject[i].images.standard_resolution.url);
+			function requestPhotos(query){
+				var next_query = '';
+
+				if(query != undefined){
+					var deferred = $q.defer();
+
+					$http.get(query)
+					.success(function(data){
+						$scope.instagramObject = data['data'];
+				
+						for(var i = 0; i < $scope.instagramObject.length; ++i){
+							$scope.instagramPhotos.push($scope.instagramObject[i].images.standard_resolution.url);
+						}
+
+						next_query = data['pagination'].next_url;
+						count++;
+
+						deferred.resolve();
+					});
+
+					deferred.promise.then(function(){
+						requestPhotos(next_query);
+					})
+					console.log("aaaaa");
 				}
-			});
+			}
+
+			requestPhotos(instagramApiLink);
+
 		},
 		link: function(scope, element, attrs){
 
