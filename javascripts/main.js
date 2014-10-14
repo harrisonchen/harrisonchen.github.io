@@ -204,6 +204,39 @@ app.directive('projectList', ['$window', function($window){
 	}
 }]);
 
+app.directive('instaPhoto', ['$window', '$compile', function($window, $compile){
+	return {
+		restrict: 'E',
+		scope: {
+			source: '@',
+		},
+		template: '<img ng-model="instas" src="{{source}}" />',
+		controller: function($scope, $element){
+
+		},
+		link: function(scope, element, attrs){
+			scope.scrollPos = window.top.scrollY;
+			var finishScroll = false;
+
+			angular.element($window).bind("scroll", function(e){
+				if(!finishScroll){
+					scope.scrollPos = window.top.scrollY;
+					scope.instaShow();
+				}
+			});
+
+			scope.instaShow = function(){
+				if(scope.scrollPos + window.innerHeight >= element[0].offsetTop){
+					element.addClass('insta');
+				}
+			}
+
+			scope.instaShow();
+
+		}
+	}
+}]);
+
 app.directive('instagramPhotos', ['$http', function($http){
 	return {
 		restrict: 'AE',
@@ -211,8 +244,8 @@ app.directive('instagramPhotos', ['$http', function($http){
 		template: '<div class="instagram-photos">' +
 								'<ul>' +
 									'<li ng-repeat="photo in instagramPhotos">' +
-										'<img src="{{photo}}" />' +
-									'<li>' +
+										'<insta-photo source="{{photo}}" />' +
+									'</li>' +
 								'<ul>' +
 							'</div>',
 		controller: function($scope, $element){
@@ -220,7 +253,7 @@ app.directive('instagramPhotos', ['$http', function($http){
 			$scope.instagramObject;
 			$scope.instagramPhotos = [];
 
-			var instagramApiLink = 'https://api.instagram.com/v1/users/5063518/media/recent/?client_id=341f861fb8eb48a789828a4026d2defa';
+			var instagramApiLink = 'https://api.instagram.com/v1/users/5063518/media/recent/?client_id=341f861fb8eb48a789828a4026d2defa&count=50';
 
 			$http.get(instagramApiLink)
 			.success(function(data){
@@ -229,8 +262,6 @@ app.directive('instagramPhotos', ['$http', function($http){
 					$scope.instagramPhotos.push($scope.instagramObject[i].images.standard_resolution.url);
 				}
 			});
-
-
 		},
 		link: function(scope, element, attrs){
 
@@ -246,42 +277,11 @@ app.directive('instagramPhotoScroll', ['$window', function($window){
 								'<instagram-photos></instagram-photos>' +
 							'</div>',
 		controller: function($scope, $element){
-			$scope.scrollPos = window.top.scrollY;
-			var finishScroll = false;
-
-			$scope.projectScroll = function(){
-				console.log($scope.projectElms);
-				for(var i = 0; i < $scope.projectElms.length; ++i){
-					if(!$scope.projectTags[i] &&
-						 $scope.scrollPos + window.innerHeight >= $scope.projectElms[i][0].offsetTop){
-						$scope.projectTags[i] = true;
-						$scope.projectElms[i].addClass('insta-show');
-						if(i == $scope.projectElms.length - 1){
-							finishScroll = true;
-						}
-					}
-				}
-			}
-
-			angular.element($window).bind("scroll", function(e){
-				if(!finishScroll){
-					$scope.scrollPos = window.top.scrollY;
-					$scope.projectScroll();
-				}
-			});
 
 		},
 		link: function(scope, element, attrs){
-			scope.projects = element[0].getElementsByTagName('li');
-			scope.projectElms = [];
-			scope.projectTags = [];
-			for(var i = 0; i < scope.projects.length; ++i){
-				scope.projectElms.push(angular.element(scope.projects[i]));
-				scope.projectTags.push(false);
-			}
-
-			scope.projectScroll();
 
 		}
 	}
 }]);
+
