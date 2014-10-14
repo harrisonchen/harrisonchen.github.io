@@ -508,6 +508,7 @@ section.module.parallax-3 {
 
 .instagram-photos ul {
 	list-style-type: none;
+	clear: both;
 }
 
 .instagram-photos li {
@@ -518,4 +519,30 @@ section.module.parallax-3 {
 .instagram-photos img {
 	width: 250px;
 	height: 250px;
+	opacity: 0.2;
+	-webkit-transition: all 0.4s ease-in-out;
+	-moz-transition: all 0.4s ease-in-out;
+	-ms-transition: all 0.4s ease-in-out;
+	-o-transition: all 0.4s ease-in-out;
+	transition: all 0.4s ease-in-out;
+	/*-webkit-animation: photo-in 1s ease-in-out;
+	animation: photo-in 1s ease-in-out;*/
 }
+
+.instagram-photos img:hover {
+	opacity: 1;
+}
+
+.insta-show {
+	opacity: 1;
+}
+
+/*@-webkit-keyframes photo-in {
+	from { opacity: 0; }
+	to { opacity: 1 }
+}
+
+@keyframes photo-in {
+	from { opacity: 0; }
+	to { opacity: 1 }
+}*/

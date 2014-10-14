@@ -169,6 +169,8 @@ app.directive('projectList', ['$window', function($window){
 			var finishScroll = false;
 
 			$scope.projectScroll = function(){
+				console.log($scope.projectElms);
+
 				for(var i = 0; i < $scope.projectElms.length; ++i){
 					if(!$scope.projectTags[i] &&
 						 $scope.scrollPos + window.innerHeight >= $scope.projectElms[i][0].offsetTop){
@@ -205,6 +207,7 @@ app.directive('projectList', ['$window', function($window){
 app.directive('instagramPhotos', ['$http', function($http){
 	return {
 		restrict: 'AE',
+		scope: {},
 		template: '<div class="instagram-photos">' +
 								'<ul>' +
 									'<li ng-repeat="photo in instagramPhotos">' +
@@ -217,17 +220,67 @@ app.directive('instagramPhotos', ['$http', function($http){
 			$scope.instagramObject;
 			$scope.instagramPhotos = [];
 
-			var instagramApiLink = 'https://api.instagram.com/v1/users/5063518/media/recent/?client_id=341f861fb8eb48a789828a4026d2defa'
+			var instagramApiLink = 'https://api.instagram.com/v1/users/5063518/media/recent/?client_id=341f861fb8eb48a789828a4026d2defa';
+
 			$http.get(instagramApiLink)
 			.success(function(data){
 				$scope.instagramObject = data['data'];
 				for(var i = 0; i < $scope.instagramObject.length; ++i){
 					$scope.instagramPhotos.push($scope.instagramObject[i].images.standard_resolution.url);
 				}
-				console.log($scope.instagramPhotos);
 			});
+
+
 		},
 		link: function(scope, element, attrs){
+
+		}
+	}
+}]);
+
+app.directive('instagramPhotoScroll', ['$window', function($window){
+	return {
+		restrict: 'AE',
+		scope: {},
+		template: '<div>' +
+								'<instagram-photos></instagram-photos>' +
+							'</div>',
+		controller: function($scope, $element){
+			$scope.scrollPos = window.top.scrollY;
+			var finishScroll = false;
+
+			$scope.projectScroll = function(){
+				console.log($scope.projectElms);
+				for(var i = 0; i < $scope.projectElms.length; ++i){
+					if(!$scope.projectTags[i] &&
+						 $scope.scrollPos + window.innerHeight >= $scope.projectElms[i][0].offsetTop){
+						$scope.projectTags[i] = true;
+						$scope.projectElms[i].addClass('insta-show');
+						if(i == $scope.projectElms.length - 1){
+							finishScroll = true;
+						}
+					}
+				}
+			}
+
+			angular.element($window).bind("scroll", function(e){
+				if(!finishScroll){
+					$scope.scrollPos = window.top.scrollY;
+					$scope.projectScroll();
+				}
+			});
+
+		},
+		link: function(scope, element, attrs){
+			scope.projects = element[0].getElementsByTagName('li');
+			scope.projectElms = [];
+			scope.projectTags = [];
+			for(var i = 0; i < scope.projects.length; ++i){
+				scope.projectElms.push(angular.element(scope.projects[i]));
+				scope.projectTags.push(false);
+			}
+
+			scope.projectScroll();
 
 		}
 	}
