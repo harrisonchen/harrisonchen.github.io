@@ -514,6 +514,7 @@ section.module.parallax-3 {
 }
 
 .instagram-photos li {
+	display: block;
 	margin: 8px;
 	float: left;
 }

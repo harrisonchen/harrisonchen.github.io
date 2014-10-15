@@ -210,7 +210,7 @@ app.directive('instaPhoto', ['$window', '$compile', function($window, $compile){
 		scope: {
 			source: '@',
 		},
-		template: '<img ng-model="instas" src="{{source}}" />',
+		template: '<img ng-model="instas" src="{{source}}" ng-click="clicked()" />',
 		controller: function($scope, $element){
 
 		},
@@ -229,6 +229,10 @@ app.directive('instaPhoto', ['$window', '$compile', function($window, $compile){
 				if(scope.scrollPos + window.innerHeight >= element[0].offsetTop){
 					element.addClass('insta');
 				}
+			}
+
+			scope.clicked = function(){
+				
 			}
 
 			scope.instaShow();
@@ -280,7 +284,6 @@ app.directive('instagramPhotos', ['$http', '$q', function($http, $q){
 					deferred.promise.then(function(){
 						requestPhotos(next_query);
 					})
-					console.log("aaaaa");
 				}
 			}
 
