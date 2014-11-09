@@ -9,15 +9,15 @@ app.controller('MainCtrl', ['$scope', '$window', function($scope, $window){
 	var parallax_10 = titles[2];
 	$scope.class_2 = false;
 	$scope.class_10 = false;
-	$scope.class_android = false;
 	var parallax_2_pos = titles[0].offsetTop + titles[0].clientHeight +
 						  titles[1].offsetTop + titles[1].clientHeight;
   var parallax_10_pos = parallax_2_pos + titles[2].offsetTop + titles[2].clientHeight;
+  console.log(parallax_2_pos);
+  console.log(parallax_10_pos);
 
 	$scope.checkPositions = function(){
 		if(($scope.scrollPos + $window.innerHeight) >= (parallax_2_pos - 100)){
 			$scope.class_2 = true;
-			$scope.class_android = true;
 			$scope.$apply();
 		}
 		if(($scope.scrollPos + $window.innerHeight) >= (parallax_10_pos + 100)){

@@ -1,51 +1,25 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
-  <meta charset="utf-8">
-  <link href='https://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="stylesheets/custom.css">
+<html ng-app="iris">
+<head>
+	<title>IRIS</title>
+	<link rel="stylesheet" href="stylesheets/custom.css">
   <script type="text/javascript" src="javascripts/angular.min.js"></script>
-  <script type="text/javascript" src="javascripts/app.js"></script> 
-  <title>Harrison Chen</title>
+  <script type="text/javascript" src="javascripts/app.js"></script>
 </head>
-<body ng-app="app">
-	<main-nav></main-nav>
-	<div class="viewport-name">
-		<h1 style="color: #FFFFFF">Harrison Chen</h1>
+<body ng-controller="MainCtrl">
+	<div class="parallax parallax-1">
+		<h1 class="title">HealthTag</h1>
+		<h2 class="title-sub">Real-Time World-Wide Health Monitoring</h2>
 	</div>
-	<!-- <a href="#">
-		<div class="viewport-img vp-hw">
-		<img src="" / style="opacity: 0;">
-		<div class="ctr-img-txt hello-world-txt">
-			> Hello World!
-		</div>
-	  </div>
-	</a> -->
-	<!-- <a href="#">
-		<div class="viewport-img" id="vp-adventure">
-			<img src="images/gospel-rock-panorama.jpg" alt="Gospel Rock Panorama" />
-			<div class="ctr-img-txt adventure-txt">
-				#adventure
-			</div>
-	  </div>
-	</a>
-	<a href="#">
-	  <div class="viewport-img" id="vp-photography">
-			<img src="images/golden-gate-bridge.jpg" alt="Golden Gate Bridge" />
-			<div class="ctr-img-txt photography-txt">
-				#photography
-			</div>
-	  </div>
-	</a>
-	<a href="#">
-		<div class="viewport-img" id="vp-bike">
-			<img src="images/mtb-1.jpg" alt="Mountain Biking" />
-			<div class="ctr-img-txt bike-txt">
-				#bike
-			</div>
-	  </div>
-	</a> -->
-	<vp-parallax></vp-parallax>
-  <footer><p>&copy 2014 Harrison Chen</p></footer>
+	<div class="parallax parallax-2">
+		<h1 class="title" ng-class="{'parallax-2-up': class_2}">Android Interface</h1>
+		<h2 ng-class="{'parallax-2-left': class_android}">Connects to an Android device to get real time measurements of _________. Recorded measurements can be pushed to cloud service Azure.</h2>
+	</div>
+	<div class="parallax parallax-3">
+		<h1 class="title">Geolocation</h1>
+	</div>
+	<div class="parallax parallax-10">
+		<h1 class="title" ng-class="{'parallax-10-show': class_10}">IriS</h1>
+	</div>
 </body>
 </html>
