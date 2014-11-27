@@ -1,25 +1,37 @@
 <!DOCTYPE html>
-<html ng-app="iris">
+<html ng-app="app">
 <head>
-	<title>IRIS</title>
+	<title>Harrison Chen</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href='https://fonts.googleapis.com/css?family=Nunito:300' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="stylesheets/custom.css">
-  <script type="text/javascript" src="javascripts/angular.min.js"></script>
-  <script type="text/javascript" src="javascripts/app.js"></script>
 </head>
-<body ng-controller="MainCtrl">
-	<div class="parallax parallax-1">
-		<h1 class="title">HealthTag</h1>
-		<h2 class="title-sub">Real-Time World-Wide Health Monitoring</h2>
+<body>
+	<div class="container {{variable}}" ng-controller="tabsCtrl">
+		<!-- <div class="dynamic-description" ng-controller="terminalCtrl">&gt {{message}}<span class="cursor">_</span></div> -->
+		<div class="nametag">
+			<!-- <input type="text" ng-model="terminal_message" /> -->
+			<!-- <div class="name-tmp"></div> -->
+			<div class="first-name">Harrison</div>
+			<div class="last-name">Chen</div>
+			<div class="horizontal"></div>
+			<!-- <div class="modules"></div> -->
+			<!-- <div class="module m1"><div class="text">About</div></div> -->
+			<!-- <div class="module m2"><div class="text">Portfolio</div></div> -->
+			<a href="https://twitter.com/ChenHarrison" target="_blank"><div class="module m1"></div></a>
+			<a href="https://www.facebook.com/harrison.chen.967" target="_blank"><div class="module m2"></div></a>
+			<a href="https://www.linkedin.com/in/harrisonwchen" target="_blank"><div class="module m3"></div>
+			<a href="https://github.com/HarrisonChen" target="_blank"><div class="module m4"></div></a>
+		</div>
+		<div class="modules2">
+			<div class="module2 tab1" ng-click="about()">About</div>
+			<div class="module2 tab2">Portfolio</div>
+			<a href="assets/hc-resume-2014.pdf" target="_blank"><div class="module2 tab3">Resume</div></a>
+			<div class="module2 tab4">Placeholder</div>
+		</div>
 	</div>
-	<div class="parallax parallax-2">
-		<h1 class="title" ng-class="{'parallax-2-up': class_2}">Android Interface</h1>
-		<h2 ng-class="{'parallax-2-left': class_android}">Connects to an Android device to get real time measurements of _________. Recorded measurements can be pushed to cloud service Azure.</h2>
-	</div>
-	<div class="parallax parallax-3">
-		<h1 class="title">Geolocation</h1>
-	</div>
-	<div class="parallax parallax-10">
-		<h1 class="title" ng-class="{'parallax-10-show': class_10}">IriS</h1>
-	</div>
+	<script type="text/javascript" src="javascripts/angular.min.js"></script>
+  <script type="text/javascript" src="javascripts/app.js"></script>
 </body>
 </html>
