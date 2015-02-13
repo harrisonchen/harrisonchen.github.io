@@ -5,30 +5,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href='https://fonts.googleapis.com/css?family=Nunito:300' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Cabin' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="stylesheets/custom.css">
 </head>
 <body>
-	<div class="container {{variable}}" ng-controller="tabsCtrl">
-		<!-- <div class="dynamic-description" ng-controller="terminalCtrl">&gt {{message}}<span class="cursor">_</span></div> -->
-		<div class="nametag">
-			<!-- <input type="text" ng-model="terminal_message" /> -->
-			<!-- <div class="name-tmp"></div> -->
-			<div class="first-name">Harrison</div>
-			<div class="last-name">Chen</div>
-			<div class="horizontal"></div>
-			<!-- <div class="modules"></div> -->
-			<!-- <div class="module m1"><div class="text">About</div></div> -->
-			<!-- <div class="module m2"><div class="text">Portfolio</div></div> -->
-			<a href="https://twitter.com/ChenHarrison" target="_blank"><div class="module m1"></div></a>
-			<a href="https://www.facebook.com/harrison.chen.967" target="_blank"><div class="module m2"></div></a>
-			<a href="https://www.linkedin.com/in/harrisonwchen" target="_blank"><div class="module m3"></div>
-			<a href="https://github.com/HarrisonChen" target="_blank"><div class="module m4"></div></a>
-		</div>
-		<div class="modules2">
-			<div class="module2 tab1" ng-click="about()">About</div>
-			<div class="module2 tab2">Portfolio</div>
-			<a href="assets/hc-resume-2014.pdf" target="_blank"><div class="module2 tab3">Resume</div></a>
-			<div class="module2 tab4">Placeholder</div>
+	<div class="container">
+		<h1>Harrison Chen</h1>
+		<h4 class="terminal-msg"><terminal-ctrl></terminal-ctrl></h4>
+		<div class="profiles">
+			<a href="https://twitter.com/ChenHarrison" target="_blank"><img src="images/twitter_icon.png" /></a>
+			<a href="https://github.com/harrisonchen" target="_blank"><img src="images/github_icon2.png" /></a>
+			<a href="https://www.linkedin.com/in/harrisonwchen" target="_blank"><img src="images/linkedin_icon.png" /></a>
 		</div>
 	</div>
 	<script type="text/javascript" src="javascripts/angular.min.js"></script>
