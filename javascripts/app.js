@@ -116,8 +116,10 @@ app.directive('notepad', ['$timeout', function($timeout) {
 			var message4 = "I love web & mobile application";
 			var message5 = "I love web & mobile app";
 			var message6 = " development!";
+			var message10 = "Currently, I spend a lot of my time developing Rails and iOS applications."
 			var message7 = "Sometimes I workout, mountain bike, and go rockclimbing.";
-			var finalMessage = "I am a Student, Designer, and Engineer."
+			var message8 = "I am a Student, Designer, and Engineer.";
+			var message9 = "Checkout my work!";
 			scope.message = "";
 			waitTime = 0;
 
@@ -133,9 +135,13 @@ app.directive('notepad', ['$timeout', function($timeout) {
 			editMessage(message4, message5, 2);
 			showMessage(message6, 2);
 			pause(500);
-			showMessage(message7, 3);
+			showMessage(message10, 3);
 			pause(500);
-			showMessage(finalMessage, 4);
+			showMessage(message7, 4);
+			pause(500);
+			showMessage(message8, 5);
+			pause(500);
+			showMessage(message9, 6);
 
 			function timerHelper(option){
 				if (option == "write") {
