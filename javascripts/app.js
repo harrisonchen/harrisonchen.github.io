@@ -90,3 +90,98 @@ app.directive('terminalCtrl', ['$timeout', function($timeout) {
 		}
 	}
 }]);
+
+app.directive('notepad', ['$timeout', function($timeout) {
+	return {
+		restrict: 'AE',
+		scope: {},
+		template: '<div class="notepad">' +
+								'<div class="bar"></div>' +
+								'<div class="page">' +
+									'<ul>' +
+										'<li ng-repeat="message in messages track by $index">' +
+											'<span ng-bind="message"></span>' +
+										'</li>' +
+									'</ul>' +
+								'</div>' +
+							'</div>',
+		controller: function($scope, $element) {
+
+		},
+		link: function(scope, element, attrs) {
+			scope.messages = ["", "", "", "", "", "", "", "", "", "", ""]
+			var message1 = "Hello World! ";
+			var message2 = "I'm Harrison!";
+			var message3 = "I am a software engineer studying at UC Riverside.";
+			var message4 = "I love web & mobile application";
+			var message5 = "I love web & mobile app";
+			var message6 = " development!";
+			var message7 = "Sometimes I workout, mountain bike, and go rockclimbing.";
+			var finalMessage = "I am a Student, Designer, and Engineer."
+			scope.message = "";
+			waitTime = 0;
+
+			pause(500);
+			showMessage(message1, 0);
+			pause(500);
+			showMessage(message2, 0);
+			pause(500);
+			showMessage(message3, 1);
+			pause(500);
+			showMessage(message4, 2);
+			pause(200);
+			editMessage(message4, message5, 2);
+			showMessage(message6, 2);
+			pause(500);
+			showMessage(message7, 3);
+			pause(500);
+			showMessage(finalMessage, 4);
+
+			function timerHelper(option){
+				if (option == "write") {
+					waitTime += 30;
+				}
+				else if (option == "delete") {
+					waitTime += 10;
+				}
+				// console.log(waitTime);
+				return waitTime;
+			}
+
+			function setMessage(message, i, listIndex){
+				$timeout(function(){
+					scope.messages[listIndex] += message[i];
+					// console.log(scope.messages[listIndex]);
+				}, timerHelper("write"));
+			}
+
+			function setMessageReverse(message, i, listIndex){
+				$timeout(function(){
+					scope.messages[listIndex] = message.substring(0, i);
+				}, timerHelper("delete"));
+			}
+
+			function showMessage(message, listIndex){
+				for(var i = 0; i < message.length; i++){
+					setMessage(message, i, listIndex);
+				}
+			}
+
+			function deleteMessage(message, listIndex){
+				for(var i = message.length; i >= 0; i--){
+					setMessageReverse(message, i, listIndex);
+				}
+			}
+
+			function editMessage(message, newMessage, listIndex){
+				for(var i = message.length; i >= newMessage.length; i--){
+					setMessageReverse(message, i, listIndex);
+				}
+			}
+
+			function pause(milliseconds){
+				waitTime += milliseconds;
+			}
+		}
+	}
+}]);

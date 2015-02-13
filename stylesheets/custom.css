@@ -63,3 +63,17 @@ body {
 	width: 640px;
 	height: 440px;
 }
+
+.notepad .page ul {
+	list-style: none;
+	padding: 16px;
+	padding-top: 0;
+	margin: 0;
+}
+
+.notepad .page ul li {
+	border-bottom: 1px solid #505050;
+	padding: 8px;
+	height: 20px;
+	text-align: left;
+}
