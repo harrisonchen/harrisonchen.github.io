@@ -50,6 +50,7 @@ app.directive('terminalCtrl', ['$timeout', function($timeout) {
 				else if (option == "delete") {
 					waitTime += 10;
 				}
+				// console.log(waitTime);
 				return waitTime;
 			}
 
