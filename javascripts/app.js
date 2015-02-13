@@ -20,7 +20,7 @@ app.directive('terminalCtrl', ['$timeout', function($timeout) {
 			var message4 = "I love web & mobile application";
 			var message5 = "I love web & mobile app";
 			var message6 = " development!";
-			var message7 = "Sometimes I workout, mountain bike, and go rockclimbing";
+			var message7 = "Sometimes I workout, mountain bike, and rock climb";
 			var finalMessage = "Student, Designer, Engineer"
 			scope.message = "";
 			waitTime = 0;
