@@ -191,3 +191,72 @@ app.directive('notepad', ['$timeout', function($timeout) {
 		}
 	}
 }]);
+
+app.service('GithubService', ['$q', '$http', function($q, $http) {
+	return {
+		getEvents: function() {
+			var deferred = $q.defer();
+
+			var req = {
+				method: 'GET',
+				url: 'https://api.github.com/users/harrisonchen/events'
+			};
+
+			$http(req)
+			.success(function(data){
+				deferred.resolve(data);
+			});
+
+			return deferred.promise;
+
+		}
+	};
+}]);
+
+app.directive('githubEvents', ['GithubService', function(GithubService) {
+	return {
+		restrict: 'AE',
+		scope: {},
+		template: '<div class="github-events-container">' +
+								'<h2 class="github-events-header">Github Events</h2>' +
+								'<ul class="github-commits-container">' +
+									'<li class="github-commit" ng-repeat="commit in commits track by $index">' +
+										'<a ng-href="{{commit.url}}">' +
+											'<b style="font-size: 26px;">Commit:</b>' +
+											'<div style="font-size: 20px;"><b>Message:</b> {{commit.message}}</div>' +
+											'<div style="font-size: 20px;"><b>Branch:</b> {{commit.branch}}</div>' +
+										'</a>' +
+									'</li>' +
+								'</ul>' +
+							'</div>',
+		controller: function($scope, $element) {
+
+			$scope.commits = [];
+
+			GithubService.getEvents()
+			.then(function(response) {
+				for(i in response) {
+					// if($scope.commits.length == 4) {
+						// return;
+					// }
+					console.log(response[i]);
+					if(response[i].type === "PushEvent") {
+						var commit = {}
+						commit.author = response[i].payload.commits[0].author.name;
+						commit.message = response[i].payload.commits[0].message;
+						commit.branch = response[i].payload.ref.substr(response[i].payload.ref.lastIndexOf("/") + 1);
+						commit.url = "https://github.com/" +
+														response[i].repo.name +
+														"/commit/" +
+														response[i].payload.commits[0].sha;
+						commit.repo = response[i].repo.name.substr(response[i].repo.name.indexOf("/") + 1);
+						$scope.commits.push(commit);
+					}
+				}
+			});
+		},
+		link: function(scope, element, attrs) {
+			
+		}
+	}
+}])
