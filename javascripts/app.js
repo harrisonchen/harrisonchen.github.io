@@ -226,6 +226,7 @@ app.directive('githubEvents', ['$timeout', 'GithubService', function($timeout, G
 											'<div style="font-size: 20px;">&gt {{commit.message}}</div>' +
 											'<div style="font-size: 20px;"><img src="images/git_branch.png" style="width: 12px; height: 12px;" />' +
 												' {{commit.branch}} <img src="images/git_branch.png" style="width: 12px; height: 12px;" /></div>' +
+											'<div style="font-size: 12px; color: #787878;">-- {{commit.timeAgo}} --</div>' +
 										'</a>' +
 									'</li>' +
 								'</ul>' +
@@ -240,26 +241,58 @@ app.directive('githubEvents', ['$timeout', 'GithubService', function($timeout, G
 				.then(function(response) {
 					for(i in response) {
 						if(response[i].type === "PushEvent") {
-							if(idHash[response[i].id] == undefined) {
-								console.log(response[i]);
-								var commit = {}
-								idHash[response[i].id] = true;
-								commit.id = response[i].id,
-								commit.created_at = response[i].created_at,
-								commit.author = response[i].payload.commits[0].author.name;
-								commit.message = response[i].payload.commits[0].message;
-								commit.branch = response[i].payload.ref.substr(response[i].payload.ref.lastIndexOf("/") + 1);
-								commit.url = "https://github.com/" +
-																response[i].repo.name +
-																"/commit/" +
-																response[i].payload.commits[0].sha;
-								commit.repo = response[i].repo.name.substr(response[i].repo.name.indexOf("/") + 1);
-								$scope.commits.push(commit);
-							}
+							console.log(response[i]);
+							var commit = {};
+							idHash[response[i].id] = true;
+							commit.id = response[i].id;
+							commit.created_at = response[i].created_at;
+							commit.author = response[i].payload.commits[0].author.name;
+							commit.message = response[i].payload.commits[0].message;
+							commit.branch = response[i].payload.ref.substr(response[i].payload.ref.lastIndexOf("/") + 1);
+							commit.url = "https://github.com/" +
+															response[i].repo.name +
+															"/commit/" +
+															response[i].payload.commits[0].sha;
+							commit.repo = response[i].repo.name.substr(response[i].repo.name.indexOf("/") + 1);
+							$scope.commits.push(commit);
 						}
 					}
 				});
 			};
+
+			var formatTime = function(created_at) {
+				var now = new Date();
+				var date = new Date(created_at);
+				var timeAgo = Math.floor((now - date)/1000);
+				var formattedTimeAgoString = "";
+
+				var days = Math.floor(timeAgo / 86400);
+				if(days > 0) {
+					if(days > 1) {
+						formattedTimeAgoString = days + " days ";
+					}
+					formattedTimeAgoString = days + " day ";
+				}
+				else {
+					var hr = Math.floor(timeAgo / 3600);
+					var min = Math.floor(timeAgo % 3600 / 60);
+					var sec = timeAgo % 60
+
+					if(hr > 0) {
+						formattedTimeAgoString += hr + "h ";
+					}
+					if(min > 0) {
+						formattedTimeAgoString += min + "m ";
+					}
+					if(sec > 0) {
+						formattedTimeAgoString += sec + "s ";
+					}
+				}
+
+				formattedTimeAgoString += "ago";
+
+				return formattedTimeAgoString;
+			}
 
 			var getNewGithubEvents = function() {
 				GithubService.getEvents()
@@ -268,10 +301,11 @@ app.directive('githubEvents', ['$timeout', 'GithubService', function($timeout, G
 						if(response[i].type === "PushEvent") {
 							if(idHash[response[i].id] == undefined) {
 								console.log(response[i]);
-								var commit = {}
+								var commit = {};
 								idHash[response[i].id] = true;
-								commit.id = response[i].id,
-								commit.created_at = response[i].created_at,
+								commit.id = response[i].id;
+								commit.created_at = response[i].created_at;
+								commit.timeAgo = formatTime(commit.created_at);
 								commit.author = response[i].payload.commits[0].author.name;
 								commit.message = response[i].payload.commits[0].message;
 								commit.branch = response[i].payload.ref.substr(response[i].payload.ref.lastIndexOf("/") + 1);
@@ -290,13 +324,20 @@ app.directive('githubEvents', ['$timeout', 'GithubService', function($timeout, G
 				});
 			}
 
+			var updateCreatedAtAgo = function() {
+				for(i in $scope.commits) {
+					$scope.commits[i].timeAgo = formatTime($scope.commits[i].created_at);
+				}
+			}
+
 			var getNewGithubEventsHelper = function() {
 				getNewGithubEvents();
 
 				$timeout(function(){
 					getNewGithubEventsHelper();
+					updateCreatedAtAgo();
 					console.log("retrieving github feed!");
-				}, 2000);
+				}, 1000);
 			};
 
 			getGithubEvents();
