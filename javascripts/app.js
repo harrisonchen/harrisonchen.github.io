@@ -220,6 +220,8 @@ app.directive('githubEvents', ['$timeout', 'GithubService', function($timeout, G
 		template: '<div class="github-events-container">' +
 								'<h2 class="github-events-header">Github Feed</h2>' +
 								'<ul class="github-commits-container">' +
+									'<li ng-if="loading" class="github-commit"><a href="https://github.com/harrisonchen">Loading Github Feed {{loadingDots}} </a></li>' +
+									'<li ng-if="!loading && commits.length == 0" class="github-commit"><a href="https://github.com/harrisonchen" style="color: red;">Sorry, Github API request rate limit has been hit :(</a></li>' +
 									'<li class="github-commit" ng-repeat="commit in commits track by $index">' +
 										'<a ng-href="{{commit.url}}">' +
 											'<div style="font-size: 20px;"><u>{{commit.repo}}</u></div>' +
@@ -234,11 +236,14 @@ app.directive('githubEvents', ['$timeout', 'GithubService', function($timeout, G
 		controller: function($scope, $element) {
 
 			$scope.commits = [];
+			$scope.loading = true;
+			$scope.loadingDots = ".";
 			var idHash = {};
 
 			var getGithubEvents = function() {
 				GithubService.getEvents()
 				.then(function(response) {
+					$scope.loading = false;
 					for(i in response) {
 						if(response[i].type === "PushEvent") {
 							console.log(response[i]);
@@ -340,6 +345,38 @@ app.directive('githubEvents', ['$timeout', 'GithubService', function($timeout, G
 				}, 1000);
 			};
 
+			var setLoadingDots = function(i) {
+				var next = i + 1;
+				switch(i) {
+					case 0:
+						$scope.loadingDots = ".";
+						break;
+					case 1:
+						$scope.loadingDots = "..";
+						break;
+					case 2:
+						$scope.loadingDots = "...";
+						break;
+					case 3:
+						$scope.loadingDots = "....";
+						break;
+					case 4:
+						$scope.loadingDots = ".....";
+						break;
+					case 5:
+						$scope.loadingDots = "......";
+						next = 0;
+						break;
+				}
+				if($scope.loading) {
+					$timeout(function(){
+						setLoadingDots(next);
+					}, 250);
+				}
+				console.log("loading");
+			}
+
+			setLoadingDots(0);
 			getGithubEvents();
 			getNewGithubEventsHelper();
 		},
