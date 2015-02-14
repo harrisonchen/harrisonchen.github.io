@@ -10,7 +10,7 @@
 </head>
 <body>
 	<div class="container">
-		<h1>Harrison Chen</h1>
+		<h1 class="name">Harrison Chen</h1>
 		<!-- <h4 class="terminal-msg"><terminal-ctrl></terminal-ctrl></h4> -->
 		<div class="profiles">
 			<a href="https://twitter.com/ChenHarrison" target="_blank"><img src="images/twitter_icon.png" /></a>
@@ -18,9 +18,23 @@
 			<a href="https://www.linkedin.com/in/harrisonwchen" target="_blank"><img src="images/linkedin_icon.png" /></a>
 		</div>
 		<github-events></github-events>
-		<notepad></notepad>
+		<notepad></notepad>	
+		<div id="projects-container">
+			<h1>Projects</h1>
+		</div>
 	</div>
+
+	<footer><a href="#projects-container">Projects</a> <a href="mailto:harrisonxchen@gmail.com" target="_top">Contact</a></footer>
+
+
+
 	<script type="text/javascript" src="javascripts/angular.min.js"></script>
   <script type="text/javascript" src="javascripts/app.js"></script>
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="javascripts/smooth_scroll.js"></script>
+
+  <script type="text/javascript">
+		$('a').smoothScroll();
+	</script>
 </body>
 </html>

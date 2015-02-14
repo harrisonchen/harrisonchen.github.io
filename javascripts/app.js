@@ -223,7 +223,7 @@ app.directive('githubEvents', ['$timeout', 'GithubService', function($timeout, G
 									'<li ng-if="loading" class="github-commit"><a href="https://github.com/harrisonchen">Loading Github Feed {{loadingDots}} </a></li>' +
 									'<li ng-if="!loading && commits.length == 0" class="github-commit"><a href="https://github.com/harrisonchen" style="color: red;">Sorry, Github API request rate limit has been hit :(</a></li>' +
 									'<li class="github-commit" ng-repeat="commit in commits track by $index">' +
-										'<a ng-href="{{commit.url}}">' +
+										'<a ng-href="{{commit.url}}" target="_blank">' +
 											'<div style="font-size: 20px;"><u>{{commit.repo}}</u></div>' +
 											'<div style="font-size: 20px;">&gt {{commit.message}}</div>' +
 											'<div style="font-size: 20px;"><img src="images/git_branch.png" style="width: 12px; height: 12px;" />' +
