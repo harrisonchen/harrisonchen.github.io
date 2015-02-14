@@ -199,7 +199,7 @@ app.service('GithubService', ['$q', '$http', function($q, $http) {
 
 			var req = {
 				method: 'GET',
-				url: 'https://api.github.com/users/harrisonchen/events'
+				url: 'https://api.github.com/users/harrisonchen/events/public'
 			};
 
 			$http(req)
@@ -332,12 +332,11 @@ app.directive('githubEvents', ['$timeout', 'GithubService', function($timeout, G
 			}
 
 			var getNewGithubEventsHelper = function() {
-				getNewGithubEvents();
+				// getNewGithubEvents();
 
 				$timeout(function(){
 					getNewGithubEventsHelper();
 					updateCreatedAtAgo();
-					console.log("retrieving github feed!");
 				}, 1000);
 			};
 
