@@ -264,7 +264,7 @@ app.directive('githubEvents', ['$timeout', 'GithubService', function($timeout, G
 
 				$timeout(function(){
 					getGithubEventsHelper();
-					console.log("retrieving github feed");
+					console.log("retrieving github feed!");
 				}, 2000);
 			};
 
