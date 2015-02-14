@@ -261,16 +261,46 @@ app.directive('githubEvents', ['$timeout', 'GithubService', function($timeout, G
 				});
 			};
 
-			var getGithubEventsHelper = function() {
-				getGithubEvents();
+			var getNewGithubEvents = function() {
+				GithubService.getEvents()
+				.then(function(response) {
+					for(i in response) {
+						if(response[i].type === "PushEvent") {
+							if(idHash[response[i].id] == undefined) {
+								console.log(response[i]);
+								var commit = {}
+								idHash[response[i].id] = true;
+								commit.id = response[i].id,
+								commit.created_at = response[i].created_at,
+								commit.author = response[i].payload.commits[0].author.name;
+								commit.message = response[i].payload.commits[0].message;
+								commit.branch = response[i].payload.ref.substr(response[i].payload.ref.lastIndexOf("/") + 1);
+								commit.url = "https://github.com/" +
+																response[i].repo.name +
+																"/commit/" +
+																response[i].payload.commits[0].sha;
+								commit.repo = response[i].repo.name.substr(response[i].repo.name.indexOf("/") + 1);
+								$scope.commits.unshift(commit);
+							}
+							else {
+								return;
+							}
+						}
+					}
+				});
+			}
+
+			var getNewGithubEventsHelper = function() {
+				getNewGithubEvents();
 
 				$timeout(function(){
-					getGithubEventsHelper();
+					getNewGithubEventsHelper();
 					console.log("retrieving github feed!");
 				}, 2000);
 			};
 
-			getGithubEventsHelper();
+			getGithubEvents();
+			getNewGithubEventsHelper();
 		},
 		link: function(scope, element, attrs) {
 			
