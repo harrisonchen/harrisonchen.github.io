@@ -224,7 +224,8 @@ app.directive('githubEvents', ['GithubService', function(GithubService) {
 										'<a ng-href="{{commit.url}}">' +
 											'<div style="font-size: 20px;"><u>{{commit.repo}}</u></div>' +
 											'<div style="font-size: 20px;">&gt {{commit.message}}</div>' +
-											'<div style="font-size: 20px;">Branch: {{commit.branch}}</div>' +
+											'<div style="font-size: 20px;"><img src="images/git_branch.png" style="width: 12px; height: 12px;" />' +
+												' {{commit.branch}}</div>' +
 										'</a>' +
 									'</li>' +
 								'</ul>' +
