@@ -218,7 +218,7 @@ app.directive('githubEvents', ['GithubService', function(GithubService) {
 		restrict: 'AE',
 		scope: {},
 		template: '<div class="github-events-container">' +
-								'<h2 class="github-events-header">Github Events</h2>' +
+								'<h2 class="github-events-header">Github Feed</h2>' +
 								'<ul class="github-commits-container">' +
 									'<li class="github-commit" ng-repeat="commit in commits track by $index">' +
 										'<a ng-href="{{commit.url}}">' +
