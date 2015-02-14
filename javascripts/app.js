@@ -225,7 +225,7 @@ app.directive('githubEvents', ['GithubService', function(GithubService) {
 											'<div style="font-size: 20px;"><u>{{commit.repo}}</u></div>' +
 											'<div style="font-size: 20px;">&gt {{commit.message}}</div>' +
 											'<div style="font-size: 20px;"><img src="images/git_branch.png" style="width: 12px; height: 12px;" />' +
-												' {{commit.branch}}</div>' +
+												' {{commit.branch}} <img src="images/git_branch.png" style="width: 12px; height: 12px;" /></div>' +
 										'</a>' +
 									'</li>' +
 								'</ul>' +
