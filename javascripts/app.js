@@ -237,6 +237,7 @@ app.directive('githubEvents', ['$timeout', 'GithubService', function($timeout, G
 			var getGithubEvents = function() {
 				GithubService.getEvents()
 				.then(function(response) {
+					$scope.commits = [];
 					for(i in response) {
 						// if($scope.commits.length == 4) {
 							// return;
