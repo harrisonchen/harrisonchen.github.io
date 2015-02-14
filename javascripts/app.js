@@ -222,9 +222,9 @@ app.directive('githubEvents', ['GithubService', function(GithubService) {
 								'<ul class="github-commits-container">' +
 									'<li class="github-commit" ng-repeat="commit in commits track by $index">' +
 										'<a ng-href="{{commit.url}}">' +
-											'<b style="font-size: 26px;">Commit:</b>' +
-											'<div style="font-size: 20px;"><b>Message:</b> {{commit.message}}</div>' +
-											'<div style="font-size: 20px;"><b>Branch:</b> {{commit.branch}}</div>' +
+											'<div style="font-size: 20px;"><u>{{commit.repo}}</u></div>' +
+											'<div style="font-size: 20px;">&gt {{commit.message}}</div>' +
+											'<div style="font-size: 20px;">Branch: {{commit.branch}}</div>' +
 										'</a>' +
 									'</li>' +
 								'</ul>' +

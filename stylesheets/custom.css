@@ -11,7 +11,7 @@ body {
 }
 
 .container {
-	width: 1080px;
+	width: 1280px;
 	margin: 0 auto;
 	text-align: center;
 }
@@ -80,10 +80,10 @@ body {
 
 .github-events-container {
 	/*border: 1px solid green;*/
+	position: absolute;
 	width: 250px;
-	height: 500px;
+	height: 430px;
 	overflow: hidden;
-	float: left;
 }
 
 .github-events-header {
@@ -92,12 +92,13 @@ body {
 	height: 30px;
 	margin: 0;
 	padding: 0;
+	border-bottom: 1px solid #00FF00;
 }
 
 .github-commits-container {
 	/*border: 1px solid pink;*/
 	width: 250px;
-	height: 470px;
+	height: 430px;
 	overflow-y: scroll;
 	list-style: none;
 	padding: 0;
@@ -113,23 +114,23 @@ body {
 	margin-bottom: 8px;
 	padding: 0;
 	margin: 8px;
-	text-align: left;
 
-	-webkit-transition: all 0.25s; /* For Safari 3.1 to 6.0 */
-  transition: all 0.25s;
+	-webkit-transition: all 0.4s; /* For Safari 3.1 to 6.0 */
+  transition: all 0.4s;
 }
 
 .github-commit:hover {
-	background-color: #505050;
+	background-color: rgba(0, 255, 0, .75);
 }
 
 .github-commit:hover a {
-	color: #FFFFFF;
+	/*color: #FFFFFF;*/
 }
 
 .github-commit a {
-	display: inline-block;
+	display: block;
 	text-decoration: none;
 	color: #505050;
 	padding: 8px;
+	text-align: center;
 }
