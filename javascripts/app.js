@@ -246,6 +246,7 @@ app.directive('githubEvents', ['$timeout', 'GithubService', function($timeout, G
 							idHash[response[i].id] = true;
 							commit.id = response[i].id;
 							commit.created_at = response[i].created_at;
+							commit.timeAgo = formatTime(commit.created_at);
 							commit.author = response[i].payload.commits[0].author.name;
 							commit.message = response[i].payload.commits[0].message;
 							commit.branch = response[i].payload.ref.substr(response[i].payload.ref.lastIndexOf("/") + 1);

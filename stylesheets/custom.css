@@ -98,7 +98,7 @@ body {
 .github-commits-container {
 	/*border: 1px solid pink;*/
 	width: 250px;
-	height: 430px;
+	height: 400px;
 	overflow-y: scroll;
 	list-style: none;
 	padding: 0;
@@ -121,10 +121,6 @@ body {
 
 .github-commit:hover {
 	background-color: rgba(0, 255, 0, .75);
-}
-
-.github-commit:hover a {
-	/*color: #FFFFFF;*/
 }
 
 .github-commit a {
