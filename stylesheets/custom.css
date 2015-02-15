@@ -10,10 +10,17 @@ body {
 	overflow-x: hidden;
 }
 
+section {
+	height: 100%;
+}
+
+.break {
+	width: 100%;
+}
+
 .container {
 	/*border: 1px solid black;*/
 	/*width: 1280px;*/
-	height: 3000px;
 	margin: 0 auto;
 	text-align: center;
 }
@@ -30,7 +37,7 @@ body {
 	padding: 8px;
 }
 
-.profiles img {
+.profiles i {
 	width: 50px;
 	height: 50px;
 	margin-left: 10px;
@@ -41,7 +48,23 @@ body {
   transition: opacity 0.25s;
 }
 
-.profiles img:hover {
+.fa-twitter {
+	color: rgba(51, 204, 255, 1);
+}
+
+.fa-github {
+	color: rgba(0, 0, 0, 1);
+}
+
+.fa-linkedin {
+	color: rgba(0, 123, 182, 1);
+}
+
+.fa-envelope-o {
+	color: rgba(0 , 191, 143, 1);
+}
+
+.profiles i:hover {
 	opacity: 1;	
 }
 
@@ -91,7 +114,8 @@ body {
 	height: 508px;
 	overflow: hidden;
 	border-bottom: 1px solid #3366FF;
-	top: 128px;
+	top: 115px;
+	left: 72px;
 }
 
 .github-events-header {
@@ -144,7 +168,6 @@ footer {
 	bottom: 0;
 	border-top: 1px solid #505050;
 	width: 100%;
-	height: 40px;
 	font-size: 32px;
 	text-align: center;
 	padding: 4px;
@@ -183,9 +206,18 @@ footer a:hover {
 }
 
 @media all and (max-width: 680px) {
+	.profiles {
+		width: 360px;
+	}
+
+	.profiles img {
+		width: 40px;
+		height: 40px;
+	}
+
 	.notepad {
 		width: 360px;
-		height: 400px;
+		height: 355px;
 	}
 
 	.notepad .bar {
@@ -195,8 +227,7 @@ footer a:hover {
 
 	.notepad .page {
 		width: 360px;
-		height: 375px;
-		font-size: 12px;
+		height: 330px;
 	}
 
 	.notepad .page ul {
@@ -205,10 +236,30 @@ footer a:hover {
 	}
 
 	.notepad .page ul li {
-		height: 14px;
+		padding: 4px;
+		padding-top: 8px;
+		height: auto;
+		border-bottom: none;
+	}
+
+	footer {
+		font-size: 24px;
 	}
 }
 
-@media all and (max-width: 480px) {
-	
+@media all and (max-width: 360px) {
+	.notepad {
+		width: 300px;
+		height: 355px;
+	}
+
+	.notepad .bar {
+		width: 300px;
+		height: 25px;
+	}
+
+	.notepad .page {
+		width: 300px;
+		height: 330px;
+	}
 }
