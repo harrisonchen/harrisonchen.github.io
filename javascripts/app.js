@@ -234,6 +234,9 @@ app.directive('githubEvents', ['$timeout', 'GithubService', function($timeout, G
 								'</ul>' +
 							'</div>',
 		controller: function($scope, $element) {
+			console.log(window.innerWidth);
+
+
 
 			$scope.commits = [];
 			$scope.loading = true;
@@ -340,40 +343,48 @@ app.directive('githubEvents', ['$timeout', 'GithubService', function($timeout, G
 				// getNewGithubEvents();
 
 				$timeout(function(){
-					getNewGithubEventsHelper();
-					updateCreatedAtAgo();
+					if(window.innerWidth >= 1280) {
+						getNewGithubEventsHelper();
+						updateCreatedAtAgo();
+					}
 				}, 1000);
 			};
 
 			var setLoadingDots = function(i) {
 				var next = i + 1;
-				switch(i) {
-					case 0:
-						$scope.loadingDots = ".";
-						break;
-					case 1:
-						$scope.loadingDots = "..";
-						break;
-					case 2:
-						$scope.loadingDots = "...";
-						break;
-					case 3:
-						$scope.loadingDots = "....";
-						break;
-					case 4:
-						$scope.loadingDots = ".....";
-						break;
-					case 5:
-						$scope.loadingDots = "......";
-						next = 0;
-						break;
+
+				if(window.innerWidth >= 1280) {
+					console.log("loading");
+					switch(i) {
+						case 0:
+							$scope.loadingDots = ".";
+							break;
+						case 1:
+							$scope.loadingDots = "..";
+							break;
+						case 2:
+							$scope.loadingDots = "...";
+							break;
+						case 3:
+							$scope.loadingDots = "....";
+							break;
+						case 4:
+							$scope.loadingDots = ".....";
+							break;
+						case 5:
+							$scope.loadingDots = "......";
+							next = 0;
+							break;
+						default:
+							$scope.loadingDots = ".";
+							next = 0;
+					}
 				}
 				if($scope.loading) {
 					$timeout(function(){
 						setLoadingDots(next);
 					}, 250);
 				}
-				console.log("loading");
 			}
 
 			setLoadingDots(0);
