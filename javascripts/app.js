@@ -116,7 +116,7 @@ app.directive('notepad', ['$timeout', function($timeout) {
 			var message4 = "I love web & mobile application";
 			var message5 = "I love web & mobile app";
 			var message6 = " development!";
-			var message10 = "Currently, I spend a lot of my time developing Rails and iOS applications."
+			var message10 = "I spend a lot of my time developing Rails and iOS applications."
 			var message7 = "Sometimes I workout, mountain bike, and rock climb.";
 			var message8 = "I am a Student, Designer, and Engineer.";
 			var message9 = "Checkout my work!";

@@ -12,7 +12,7 @@ body {
 
 .container {
 	/*border: 1px solid black;*/
-	width: 1280px;
+	/*width: 1280px;*/
 	height: 3000px;
 	margin: 0 auto;
 	text-align: center;
@@ -73,7 +73,7 @@ body {
 .notepad .page ul {
 	list-style: none;
 	padding: 16px;
-	padding-top: 0;
+	padding-top: 2px;
 	margin: 0;
 }
 
@@ -168,4 +168,47 @@ footer a:hover {
 	/*border: 1px solid green;*/
 	margin-top: 48px;
 	padding: 8px;
+}
+
+/* Responsiveness */
+
+@media all and (max-width: 1280px) {
+	.github-events-container {
+		display: none;
+	}
+}
+
+@media all and (max-width: 800px) {
+
+}
+
+@media all and (max-width: 680px) {
+	.notepad {
+		width: 360px;
+		height: 400px;
+	}
+
+	.notepad .bar {
+		width: 360px;
+		height: 25px;
+	}
+
+	.notepad .page {
+		width: 360px;
+		height: 375px;
+		font-size: 12px;
+	}
+
+	.notepad .page ul {
+		padding: 8px;
+		padding-top: 0;
+	}
+
+	.notepad .page ul li {
+		height: 14px;
+	}
+}
+
+@media all and (max-width: 480px) {
+	
 }
