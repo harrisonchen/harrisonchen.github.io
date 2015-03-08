@@ -4,6 +4,7 @@ var WIDTH;
 var HEIGHT;
 var canvas;
 var context;
+var NUMBER_OF_STARS = 400;
 var MAX_STAR_RADIUS = 1;
 var stars = [];
 var prevMouseX;
@@ -11,7 +12,7 @@ var prevMouseY;
 
 function canvasSetup() {
   WIDTH = window.innerWidth;
-  HEIGHT = window.innerHeight;
+  HEIGHT = 5000;
 
   canvas = document.getElementById('sky');
   canvas.width = WIDTH;
@@ -81,7 +82,7 @@ function gaze(e) {
 };
 
 function drawSky() {
-  for(var i = 0; i < 100; i += 1) {
+  for(var i = 0; i < NUMBER_OF_STARS; i += 1) {
     stars[i] = new Star(randomizeSettings());
     stars[i].draw();
   }
@@ -90,7 +91,7 @@ function drawSky() {
 function gazeSky(diff) {
   context.clearRect(0, 0, WIDTH, HEIGHT);
 
-  for(var i = 0; i < 100; i +=1) {
+  for(var i = 0; i < NUMBER_OF_STARS; i +=1) {
     stars[i].move(diff);
     stars[i].draw();
   }
