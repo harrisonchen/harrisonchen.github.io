@@ -15,6 +15,11 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+  color: white;
+}
+
 span.tab {
   padding-left: 2em;
 }
@@ -91,12 +96,12 @@ span.tab {
   margin-top: 250px;
   overflow: hidden;
 
-  transition: all 0.2s ease-in-out;
+  transition: all 0.25s ease-in-out;
 }
 
 .project-appear {
   margin: 8px !important;
-  opacity: 0.2 !important;
+  opacity: 1 !important;
 }
 
 .project:hover {
@@ -104,7 +109,7 @@ span.tab {
 }
 
 .project-title {
-  /*display: inline-block;*/
+  position: relative;
   padding-bottom: 8px;
 }
 
@@ -128,6 +133,50 @@ span.tab {
 .project-description {
   padding: 8px;
   /*text-align: center;*/
+}
+
+.git-link {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0.5;
+  color: #000000;
+
+  transition: all 0.15s ease-in-out;
+}
+
+.git-link:hover {
+  opacity: 1;
+}
+
+#contact {
+  position: absolute;
+  top: 0;
+  bottom: -3600px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 680px;
+  height: 200px;
+  text-align: center;
+}
+
+#contact h2 {
+  padding: 8px;
+  display: inline-block;
+  border-bottom: 2px solid #FFFFFF;
+}
+
+.contact-links {
+  margin: 16px;
+  opacity: 0.5;
+
+  /*transition: all 0.2s ease-in-out;*/
+}
+
+.contact-links:hover {
+  opacity: 1;
 }
 
 /* Responsiveness */
