@@ -8,6 +8,7 @@ body {
   overflow-x: hidden;
   background-color: #181818;
   color: #FFFFFF;
+  height: 2000px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -29,12 +30,34 @@ h1, h2, h3, h4, h5, h6 {
   height: 110px;
 }
 
-.title {
+.name {
   font-size: 48px;
 }
 
 .description {
   font-size: 24px;
+}
+
+#intro-box {
+  position: absolute;
+  top: 0;
+  bottom: -1400px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 680px;
+  height: 500px;
+  opacity: 0;
+
+  transition: all 0.2s ease-in-out;
+}
+
+.full-opacity {
+  opacity: 1 !important;
+}
+
+.intro-box-final {
+  bottom: -1300px !important;
 }
 
 /* Responsiveness */
