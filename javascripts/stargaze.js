@@ -18,7 +18,7 @@ function canvasSetup() {
   canvas.width = WIDTH;
   canvas.height = HEIGHT;
 
-  document.getElementsByTagName('body')[0].addEventListener("mousemove", gaze);
+  document.getElementsByTagName('body')[0].addEventListener('mousemove', gaze);
 
   context = canvas.getContext('2d');
 };
@@ -47,18 +47,6 @@ function Star(init) {
   };
 
   this.move = function(diff) {
-    // if(diff.x_diff > 0) {
-    //   diff.x_diff += settings.radius * 0.005;
-    // }
-    // else {
-    //   diff.x_diff -= settings.radius * 0.005;
-    // }
-    // if(diff.y_diff > 0) {
-    //   diff.y_diff += settings.radius * 0.005;
-    // }
-    // else {
-    //   diff.y_diff -= settings.radius * 0.005;
-    // }
     settings.x_origin += diff.x_diff;
     settings.y_origin += diff.y_diff;
   }
@@ -74,10 +62,11 @@ function gaze(e) {
     var y = prevMouseY;
     prevMouseX = e.x;
     prevMouseY = e.y;
-    requestAnimationFrame(gazeSky({
-      x_diff: (x - e.x) * 0.04,
-      y_diff: (y - e.y) * 0.04
-    }));
+    gazeSky({
+      x_diff: (x - e.x) * 0.03,
+      y_diff: (y - e.y) * 0.03
+    });
+    requestAnimationFrame(draw);
   }
 };
 
@@ -89,10 +78,15 @@ function drawSky() {
 };
 
 function gazeSky(diff) {
+  for(var i = 0; i < NUMBER_OF_STARS; i +=1) {
+    stars[i].move(diff);
+  }
+}
+
+function draw() {
   context.clearRect(0, 0, WIDTH, HEIGHT);
 
   for(var i = 0; i < NUMBER_OF_STARS; i +=1) {
-    stars[i].move(diff);
     stars[i].draw();
   }
 }

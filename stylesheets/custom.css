@@ -18,10 +18,10 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 
-.intro-box {
+#intro-box {
   position: absolute;
-  top: 400px;
-  bottom: 0;
+  top: 0;
+  bottom: -400px;
   left: 0;
   right: 0;
   margin: auto;
