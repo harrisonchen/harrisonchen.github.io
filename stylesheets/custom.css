@@ -1,272 +1,52 @@
 html {
-	font-family: 'Cabin', sans-serif;
-	overflow-x: hidden;
-	padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  padding: 0;
 }
 
 body {
-	margin: 0;
-	overflow-x: hidden;
+  margin: 0;
+  overflow-x: hidden;
+  background-color: #181818;
+  color: #FFFFFF;
 }
 
-section {
-	width: 100%;
-	height: 100%;
-	margin: 0;
-	padding: 0;
-	/*border: 2px solid green;*/
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
 }
 
-.container {
-	/*border: 1px solid black;*/
-	margin: 0 auto;
-	text-align: center;
+.center {
+  text-align: center;
 }
 
-.name {
-
+.intro-box {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 350px;
+  height: 110px;
 }
 
-#about {
-	height: 100%;
-	min-height: 700px;
+.title {
+  font-size: 48px;
 }
 
-.profiles {
-	border-top: 1px solid #505050;
-	width: 400px;
-	height: 50px;
-	margin: 0 auto;
-	padding: 8px;
-}
-
-.profiles i {
-	width: 50px;
-	height: 50px;
-	margin-left: 10px;
-	margin-right: 10px;
-	opacity: 0.5;
-
-	-webkit-transition: opacity 0.25s; /* For Safari 3.1 to 6.0 */
-  transition: opacity 0.25s;
-}
-
-.fa-twitter {
-	color: rgba(51, 204, 255, 1);
-}
-
-.fa-github {
-	color: rgba(0, 0, 0, 1);
-}
-
-.fa-linkedin {
-	color: rgba(0, 123, 182, 1);
-}
-
-.fa-envelope-o {
-	color: rgba(0 , 191, 143, 1);
-}
-
-.profiles i:hover {
-	opacity: 1;	
-}
-
-.terminal-msg {
-	color: #505050;
-}
-
-.notepad {
-	width: 640px;
-	height: 480px;
-	margin: 0 auto;
-	overflow: hidden;
-	margin: 8px auto;
-	box-shadow: 8px 8px 0 0 rgba(0, 0, 0, 0.7);
-}
-
-.notepad .bar {
-	width: 640px;
-	height: 40px;
-	background-color: #663300;
-}
-
-.notepad .page {
-	background-color: #FFFF99;
-	width: 640px;
-	height: 440px;
-}
-
-.notepad .page ul {
-	list-style: none;
-	padding: 16px;
-	padding-top: 2px;
-	margin: 0;
-}
-
-.notepad .page ul li {
-	border-bottom: 1px solid #505050;
-	height: 20px;
-	padding: 8px;
-	text-align: left;
-}
-
-.github-events-container {
-	/*border: 1px solid green;*/
-	position: absolute;
-	width: 250px;
-	height: 508px;
-	overflow: hidden;
-	border-bottom: 1px solid #3366FF;
-	top: 115px;
-	left: 72px;
-}
-
-.github-events-header {
-	/*border: 1px solid orange;*/
-	width: 250px;
-	height: 30px;
-	margin: 0;
-	padding: 0;
-	border-bottom: 1px solid #3366FF;
-}
-
-.github-commits-container {
-	/*border: 1px solid pink;*/
-	width: 248px;
-	height: 477px;
-	overflow-y: scroll;
-	list-style: none;
-	padding: 0;
-	margin: 0;
-}
-
-.github-commit {
-	border: 1px solid #3366FF;
-	border-bottom-right-radius: 10px 10px;
-	border-bottom-left-radius: 10px 10px;
-	border-top-right-radius: 10px 10px;
-	border-top-left-radius: 10px 10px;
-	margin-bottom: 8px;
-	padding: 0;
-	margin: 8px;
-
-	-webkit-transition: all 0.4s; /* For Safari 3.1 to 6.0 */
-  transition: all 0.4s;
-}
-
-.github-commit:hover {
-	background-color: rgba(51, 102, 255, .75);
-}
-
-.github-commit a {
-	display: block;
-	text-decoration: none;
-	color: #505050;
-	padding: 8px;
-	text-align: center;
-}
-
-footer {
-	position: fixed;
-	bottom: 0;
-	border-top: 1px solid #505050;
-	width: 100%;
-	font-size: 32px;
-	text-align: center;
-	padding: 4px;
-	background-color: #FFFFFF;
-}
-
-footer a {
-	margin-left: 16px;
-	margin-right: 16px;
-	text-decoration: none;
-	color: #505050;
-	-webkit-transition: all 0.25s; /* For Safari 3.1 to 6.0 */
-  transition: all 0.25s;
-}
-
-footer a:hover {
-	color: #000000;
-}
-
-#projects {
-	/*border: 1px solid green;*/
-	border-top: 1px solid #505050;
-	margin-top: 48px;
+.description {
+  font-size: 24px;
 }
 
 /* Responsiveness */
 
 @media all and (max-width: 1280px) {
-	.github-events-container {
-		display: none;
-	}
 }
 
 @media all and (max-width: 800px) {
-
 }
 
 @media all and (max-width: 680px) {
-	#about {
-		min-height: 510px;
-	}
-
-	.profiles {
-		width: 300px;
-	}
-
-	.profiles img {
-		width: 40px;
-		height: 40px;
-	}
-
-	.notepad {
-		width: 360px;
-		height: 355px;
-	}
-
-	.notepad .bar {
-		width: 360px;
-		height: 25px;
-	}
-
-	.notepad .page {
-		width: 360px;
-		height: 330px;
-	}
-
-	.notepad .page ul {
-		padding: 8px;
-		padding-top: 0;
-	}
-
-	.notepad .page ul li {
-		padding: 4px;
-		padding-top: 8px;
-		height: auto;
-		border-bottom: none;
-	}
-
-	footer {
-		font-size: 24px;
-	}
 }
 
 @media all and (max-width: 360px) {
-	.notepad {
-		width: 300px;
-		height: 355px;
-	}
-
-	.notepad .bar {
-		width: 300px;
-		height: 25px;
-	}
-
-	.notepad .page {
-		width: 300px;
-		height: 330px;
-	}
 }
