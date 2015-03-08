@@ -4,7 +4,7 @@ var WIDTH;
 var HEIGHT;
 var canvas;
 var context;
-var NUMBER_OF_STARS = 400;
+var NUMBER_OF_STARS = 1000;
 var MAX_STAR_RADIUS = 1;
 var stars = [];
 var prevMouseX;
@@ -12,13 +12,13 @@ var prevMouseY;
 
 function canvasSetup() {
   WIDTH = window.innerWidth;
-  HEIGHT = 5000;
+  HEIGHT = 2000;
 
   canvas = document.getElementById('sky');
   canvas.width = WIDTH;
   canvas.height = HEIGHT;
 
-  document.getElementsByTagName('body')[0].addEventListener('mousemove', gaze);
+  // document.getElementsByTagName('body')[0].addEventListener('mousemove', gaze);
 
   context = canvas.getContext('2d');
 };
@@ -27,7 +27,7 @@ function randomizeSettings() {
   return {
     x_origin: WIDTH * Math.random(),
     y_origin: HEIGHT * Math.random(),
-    radius: 0.75 * Math.random() + 0.25
+    radius: 0.8 * Math.random() + 0.05
   };
 };
 
@@ -41,7 +41,7 @@ function Star(init) {
   this.draw = function() {
     context.fillStyle = "#FFFFFF";
     context.beginPath();
-    context.arc(settings.x_origin, settings.y_origin, settings.radius, 0, 2*Math.PI);
+    context.arc(settings.x_origin, settings.y_origin, settings.radius, 0, 1.5*Math.PI);
     context.closePath()
     context.fill();
   };
@@ -78,7 +78,7 @@ function drawSky() {
 };
 
 function gazeSky(diff) {
-  for(var i = 0; i < NUMBER_OF_STARS; i +=1) {
+  for(var i = 0; i < NUMBER_OF_STARS; i += 1) {
     stars[i].move(diff);
   }
 }
@@ -86,9 +86,23 @@ function gazeSky(diff) {
 function draw() {
   context.clearRect(0, 0, WIDTH, HEIGHT);
 
-  for(var i = 0; i < NUMBER_OF_STARS; i +=1) {
+  for(var i = 0; i < NUMBER_OF_STARS; i += 1) {
     stars[i].draw();
   }
+}
+
+function movingSky() {
+  context.clearRect(0, 0, WIDTH, HEIGHT);
+
+  for(var i = 0; i < NUMBER_OF_STARS; i += 1) {
+    stars[i].move({
+      x_diff: -1,
+      y_diff: 1
+    });
+    stars[i].draw();
+  }
+
+  requestAnimationFrame(movingSky);
 }
 
 canvasSetup();
