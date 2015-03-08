@@ -15,6 +15,8 @@ var nameBox = document.getElementById('name-box');
 var introBox = document.getElementById('intro-box');
 var projectList = document.getElementById('projects');
 var projects = document.getElementsByClassName('project');
+var contacts = document.getElementById('contacts');
+var navie = document.getElementById('navie');
 
 for(var i = 0; i < projects.length; i += 1) {
   projectListShow[i] = false;
@@ -38,6 +40,9 @@ function parallax(e) {
         projectListShow[i] = true;
       }
     }
+  }
+  if(body.scrollTop >= contacts.offsetTop ) {
+    navie.className += " rotate-180";
   }
 };
 

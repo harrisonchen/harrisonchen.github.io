@@ -150,7 +150,7 @@ span.tab {
   opacity: 1;
 }
 
-#contact {
+#contacts {
   position: absolute;
   top: 0;
   bottom: -3300px;
@@ -162,7 +162,7 @@ span.tab {
   text-align: center;
 }
 
-#contact h2 {
+#contacts h2 {
   padding: 8px;
   display: inline-block;
   border-bottom: 2px solid #FFFFFF;
@@ -177,6 +177,33 @@ span.tab {
 
 .contact-links:hover {
   opacity: 1;
+}
+
+#navie {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 8px;
+
+  transition: all 0.2s ease-in-out;
+
+  -webkit-animation: pulse 1s infinite; /* Chrome, Safari, Opera */
+  animation: pulse 1s infinite;
+}
+
+.rotate-180 {
+  transform: rotate(180deg);
+}
+
+@-webkit-keyframes pulse {
+    from {opacity: 0.5;}
+    to {opacity: 1;}
+}
+
+/* Standard syntax */
+@keyframes pulse {
+    from {opacity: 0.5;}
+    to {opacity: 1;}
 }
 
 /* Responsiveness */
