@@ -8,7 +8,7 @@ body {
   overflow-x: hidden;
   background-color: #181818;
   color: #FFFFFF;
-  height: 2000px;
+  /*height: 2000px;*/
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -51,7 +51,7 @@ span.tab {
   /*border: 1px solid green;*/
   position: absolute;
   top: 0;
-  bottom: -1200px;
+  bottom: -1100px;
   left: 0;
   right: 0;
   margin: auto;
@@ -69,14 +69,14 @@ span.tab {
 }
 
 .intro-box-final {
-  bottom: -1100px !important;
+  bottom: -1000px !important;
 }
 
 #projects {
   /*border: 1px solid green;*/
   position: absolute;
   top: 0;
-  bottom: -2400px;
+  bottom: -2100px;
   left: 0;
   right: 0;
   margin: auto;
@@ -153,7 +153,7 @@ span.tab {
 #contact {
   position: absolute;
   top: 0;
-  bottom: -3600px;
+  bottom: -3300px;
   left: 0;
   right: 0;
   margin: auto;
