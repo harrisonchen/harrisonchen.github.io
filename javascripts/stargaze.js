@@ -18,7 +18,7 @@ function canvasSetup() {
   canvas.width = WIDTH;
   canvas.height = HEIGHT;
 
-  // document.getElementsByTagName('body')[0].addEventListener('mousemove', gaze);
+  document.getElementsByTagName('body')[0].addEventListener('mousemove', gaze);
 
   context = canvas.getContext('2d');
 };

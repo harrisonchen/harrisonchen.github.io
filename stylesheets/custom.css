@@ -15,6 +15,10 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
+span.tab {
+  padding-left: 2em;
+}
+
 .center {
   text-align: center;
 }
@@ -39,6 +43,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #intro-box {
+  /*border: 1px solid green;*/
   position: absolute;
   top: 0;
   bottom: -1400px;
@@ -46,8 +51,10 @@ h1, h2, h3, h4, h5, h6 {
   right: 0;
   margin: auto;
   width: 680px;
-  height: 500px;
+  height: 200px;
   opacity: 0;
+  padding: 16px;
+  line-height: 1.6;
 
   transition: all 0.2s ease-in-out;
 }
@@ -58,6 +65,46 @@ h1, h2, h3, h4, h5, h6 {
 
 .intro-box-final {
   bottom: -1300px !important;
+}
+
+.projects {
+  position: absolute;
+  top: 0;
+  bottom: -2800px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 680px;
+  height: 1000px;
+}
+
+.project {
+  /*border: 1px solid #FFFFFF;*/
+  width: 340px;
+  color: #000000;
+  background-color: rgba(255, 255, 255, 0.8);
+  opacity: 0.2;
+
+  transition: all 0.2s ease-in-out;
+}
+
+.project:hover {
+  opacity: 1;
+}
+
+.project-title {
+  width: 340px;
+  text-align: center;
+}
+
+.project-img img {
+  width: 340px;
+  height: 340px;
+}
+
+.project-description {
+  /*border-top: 1px solid #FFFFFF;*/
+  padding: 8px;
 }
 
 /* Responsiveness */
