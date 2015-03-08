@@ -8,22 +8,36 @@ var elementListShow = {
   introBox: false
 }
 
+var projectListShow = {};
+
 var body = document.getElementsByTagName('body')[0];
 var nameBox = document.getElementById('name-box');
 var introBox = document.getElementById('intro-box');
+var projectList = document.getElementById('projects');
+var projects = document.getElementsByClassName('project');
+
+for(var i = 0; i < projects.length; i += 1) {
+  projectListShow[i] = false;
+}
 
 function parallax(e) {
   var nameBoxDiff = nameBox.offsetTop - body.scrollTop
   if(nameBoxDiff > 0) {
     nameBox.style.opacity = nameBoxDiff * 0.0025;
   }
-  if(body.scrollTop >= nameBox.offsetTop) {
+  if(body.scrollTop >= nameBox.offsetTop / 2) {
     if(!elementListShow.introBox) {
       introBox.className += " full-opacity intro-box-final";
       elementListShow.introBox = true;
     }
   }
-  console.log(nameBox.offsetTop);
-  console.log(body.scrollTop);
+  for(var i = 0; i < projects.length; i += 1) {
+    if(body.scrollTop >= nameBox.offsetTop / 4 + projects[i].offsetTop) {
+      if(!projectListShow[i]) {
+        projects[i].className += " project-appear";
+        projectListShow[i] = true;
+      }
+    }
+  }
 };
 

@@ -46,7 +46,7 @@ span.tab {
   /*border: 1px solid green;*/
   position: absolute;
   top: 0;
-  bottom: -1400px;
+  bottom: -1200px;
   left: 0;
   right: 0;
   margin: auto;
@@ -64,47 +64,70 @@ span.tab {
 }
 
 .intro-box-final {
-  bottom: -1300px !important;
+  bottom: -1100px !important;
 }
 
-.projects {
+#projects {
+  /*border: 1px solid green;*/
   position: absolute;
   top: 0;
-  bottom: -2800px;
+  bottom: -2400px;
   left: 0;
   right: 0;
   margin: auto;
-  width: 680px;
+  width: 936px;
   height: 1000px;
 }
 
 .project {
   /*border: 1px solid #FFFFFF;*/
-  width: 340px;
+  width: 450px;
+  height: 450px;
   color: #000000;
   background-color: rgba(255, 255, 255, 0.8);
-  opacity: 0.2;
+  opacity: 0;
+  float: left;
+  margin: 8px;
+  margin-top: 250px;
+  overflow: hidden;
 
   transition: all 0.2s ease-in-out;
 }
 
+.project-appear {
+  margin: 8px !important;
+  opacity: 0.2 !important;
+}
+
 .project:hover {
-  opacity: 1;
+  opacity: 1 !important;
 }
 
 .project-title {
-  width: 340px;
-  text-align: center;
+  /*display: inline-block;*/
+  padding-bottom: 8px;
+}
+
+.project-title h2 {
+  border-bottom: 2px solid #000000;
+  padding-bottom: 8px;
+  display: inline-block;
 }
 
 .project-img img {
-  width: 340px;
-  height: 340px;
+  width: 450px;
+  height: 450px;
+}
+
+.project-img {
+  width: 450px;
+  height: 320px;
+  overflow: hidden;
 }
 
 .project-description {
-  /*border-top: 1px solid #FFFFFF;*/
   padding: 8px;
+  /*text-align: center;*/
 }
 
 /* Responsiveness */
