@@ -1,5 +1,6 @@
 html {
-  font-family: 'Open Sans', sans-serif;
+  /*font-family: 'Open Sans', sans-serif;*/
+  font-family: 'Ubuntu', sans-serif;
   padding: 0;
 }
 
@@ -9,6 +10,7 @@ body {
   background-color: #181818;
   color: #FFFFFF;
   /*height: 2000px;*/
+  letter-spacing: 0.05em;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -162,14 +164,15 @@ span.tab {
   text-align: center;
 }
 
-#contacts h2 {
+#contacts h3 {
   padding: 8px;
   display: inline-block;
   border-bottom: 2px solid #FFFFFF;
 }
 
 .contact-links {
-  margin: 16px;
+  margin: 4px;
+  margin-top: 8px;
   opacity: 0.5;
 
   /*transition: all 0.2s ease-in-out;*/
