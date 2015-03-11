@@ -1,6 +1,5 @@
 html {
-  /*font-family: 'Open Sans', sans-serif;*/
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Cabin', sans-serif;
   padding: 0;
 }
 
@@ -31,6 +30,7 @@ span.tab {
 }
 
 #name-box {
+  font-family: 'Ubuntu', sans-serif;
   position: absolute;
   top: 0;
   bottom: -400px;
