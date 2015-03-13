@@ -42,7 +42,7 @@ function parallax(e) {
     }
   }
   if(body.scrollTop >= contacts.offsetTop ) {
-    navie.className += " rotate-180";
+    // navie.className += " rotate-180";
   }
 };
 

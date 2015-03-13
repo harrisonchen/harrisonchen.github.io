@@ -1,5 +1,5 @@
 html {
-  font-family: 'Cabin', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   padding: 0;
 }
 
@@ -8,8 +8,11 @@ body {
   overflow-x: hidden;
   background-color: #181818;
   color: #FFFFFF;
-  /*height: 2000px;*/
   letter-spacing: 0.05em;
+}
+
+img, div {
+  margin: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -21,24 +24,26 @@ a {
   color: white;
 }
 
-span.tab {
-  padding-left: 2em;
+.clearfix {
+    display: inline-block;
+    width: 100%;
 }
 
 .center {
   text-align: center;
 }
 
-#name-box {
-  font-family: 'Ubuntu', sans-serif;
+section#intro {
+  width: 100vw;
+  height: 100vh;
+}
+
+#name-container {
   position: absolute;
-  top: 0;
-  bottom: -400px;
-  left: 0;
-  right: 0;
-  margin: auto;
+  bottom: 15%;
+  left: 50%;
+  margin-left: -175px;
   width: 350px;
-  height: 110px;
 }
 
 .name {
@@ -49,41 +54,27 @@ span.tab {
   font-size: 24px;
 }
 
-#intro-box {
-  /*border: 1px solid green;*/
-  position: absolute;
-  top: 0;
-  bottom: -1100px;
-  left: 0;
-  right: 0;
-  margin: auto;
-  width: 680px;
-  height: 200px;
-  opacity: 0;
-  padding: 16px;
-  line-height: 1.6;
-
-  transition: all 0.2s ease-in-out;
-}
-
 .full-opacity {
   opacity: 1 !important;
 }
 
-.intro-box-final {
-  bottom: -1000px !important;
+section#about {
+  width: 100vw;
+  padding: 8px;
 }
 
-#projects {
-  /*border: 1px solid green;*/
-  position: absolute;
-  top: 0;
-  bottom: -2100px;
-  left: 0;
-  right: 0;
-  margin: auto;
-  width: 936px;
-  height: 1000px;
+#about-container {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+section#projects {
+  width: 100vw;
+}
+
+#projects-container {
+  max-width: 936px;
+  margin: 0 auto;
 }
 
 .project {
@@ -92,74 +83,57 @@ span.tab {
   height: 450px;
   color: #000000;
   background-color: rgba(255, 255, 255, 1);
-  opacity: 0;
   float: left;
   margin: 8px;
-  margin-top: 250px;
   overflow: hidden;
 
-  transition: all 0.25s ease-in-out;
+  /*transition: all 0.25s ease-in-out;*/
 }
 
-.project-appear {
-  margin: 8px !important;
-  opacity: 1 !important;
+.project img {
+  display: block;
+  width: 100%;
+  height: 300px;
+  /*border: 1px solid orange;*/
 }
 
-.project:hover {
-  opacity: 1 !important;
-}
-
-.project-title {
-  position: relative;
-  padding-bottom: 8px;
-}
-
-.project-title h2 {
-  border-bottom: 2px solid #000000;
-  padding-bottom: 8px;
-  display: inline-block;
-}
-
-.project-img img {
-  width: 450px;
-  height: 450px;
-}
-
-.project-img {
-  width: 450px;
-  height: 320px;
-  overflow: hidden;
-}
-
-.project-description {
+.project-description-container {
+  max-width: 100%;
   padding: 8px;
+  /*border: 2px solid green;*/
+  background-color: #FFFFFF;
   /*text-align: center;*/
 }
 
-.git-link {
+.project-label {
+  position: relative;
+  /*border: 1px solid red;*/
+}
+
+.project-title {
+  display: inline-block;
+  border-bottom: 2px solid #000000;
+}
+
+.project-description {
+  margin-top: 8px;
+}
+
+.fork-link {
   display: block;
   position: absolute;
   top: 0;
   right: 0;
+  padding: 4px;
   opacity: 0.5;
   color: #000000;
-
-  transition: all 0.15s ease-in-out;
 }
 
-.git-link:hover {
+.fork-link:hover {
   opacity: 1;
 }
 
-#contacts {
-  position: absolute;
-  top: 0;
-  bottom: -3300px;
-  left: 0;
-  right: 0;
-  margin: auto;
-  width: 680px;
+section#contacts {
   height: 200px;
   text-align: center;
 }
@@ -183,10 +157,13 @@ span.tab {
 }
 
 #navie {
-  position: fixed;
+  position: absolute;
+  text-align: center;
   bottom: 0;
-  right: 0;
+  left: 50%;
+  width: 50px;
   margin: 8px;
+  margin-left: -25px;
 
   transition: all 0.2s ease-in-out;
 
@@ -212,6 +189,25 @@ span.tab {
 /* Responsiveness */
 
 @media all and (max-width: 1280px) {
+}
+
+@media all and (max-width: 960px) {
+
+  section#projects {
+    width: 100vw;
+    padding: 8px;
+  }
+
+  .project {
+    width: 96%;
+    height: 450px;
+    color: #000000;
+    background-color: rgba(255, 255, 255, 1);
+    float: left;
+    margin: 0;
+    margin-bottom: 16px;
+    overflow: hidden;
+  }
 }
 
 @media all and (max-width: 800px) {

@@ -3,87 +3,95 @@
 <head>
   <title>Harrison Chen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Ubuntu:300' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Cabin' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="stylesheets/custom.css">
 </head>
 <body>
-  <div id="name-box">
-    <h1 class="name center">Harrison Chen</h1>
-    <h2 class="description center">- Student of Life -</h2>
-  </div>
-  <div id="intro-box">
-    <div class="">
+  <section id="intro">
+    <div id="name-container">
+      <h1 class="name center">Harrison Chen</h1>
+      <h2 class="description center">- Student of Life -</h2>
+    </div>
+    <div id="navie"><i class="fa fa-angle-double-down fa-3x"></i><div>
+  </section>
+
+  <section id="about">
+    <div id="about-container">
       Hi, I'm Harrison!
       I am a computer engineer studying at UC Riverside.
       I love web & mobile app development!
       I spend a lot of my free time developing Rails and iOS applications.
       I enjoy working out, mountain biking, and rock climbing.
     </div>
-  </div>
-    
-  <div id="projects">
-    <div class="project">
-      <div class="project-img">
-        <img src="images/guppypay.png" />
-      </div>
-      <div class="project-description">
-        <div class="project-title">
-          <h2>GuppyPay</h2>
-          <a href="https://github.com/goteammobi/guppypay" target="_blank">
-            <i class="fa fa-code-fork fa-2x git-link"></i>
-          </a>
-        </div>
-        GuppyPay makes group payments easy with Venmo.
-      </div>
-    </div>
-    <div class="project">
-      <div class="project-img">
-        <img src="images/pineapples.png" />
-      </div>
-      <div class="project-description">
-        <div class="project-title">
-          <h2>Pineapples!</h2>
-          <a href="https://github.com/harrisonchen/pineapples" target="_blank">
-            <i class="fa fa-code-fork fa-2x git-link"></i>
-          </a>
-        </div>
-        Pineapples! is an easy to use chrome extension that allows the user to search up something they crave in their food and will search for recipes based on the ingredient.
-      </div>
-    </div>
-    <div class="project">
-      <div class="project-img">
-        <img src="images/snakegame.png" />
-      </div>
-      <div class="project-description">
-        <div class="project-title">
-          <h2>Snake</h2>
-          <a href="https://github.com/harrisonchen/SnakeGame" target="_blank">
-            <i class="fa fa-code-fork fa-2x git-link"></i>
-          </a>
-        </div>
-        Snake game made for an Embedded System class using ATMega32 microcontroller and a bunch of other stuff.
-      </div>
-    </div>
-    <div class="project">
-      <div class="project-img">
-        <img src="images/brickbreaker.png" />
-      </div>
-      <div class="project-description">
-        <div class="project-title">
-          <h2>BrickBreaker</h2>
-          <a href="https://github.com/harrisonchen/BrickBreaker" target="_blank">
-            <i class="fa fa-code-fork fa-2x git-link"></i>
-          </a>
-        </div>
-        A BrickBreaker game clone. Messed with an Arduino and an MPU-6050 3-axis gyro/accelerometer sensor.
-      </div>
-    </div>
-  </div>
+  </section>
 
-  <div id="contacts">
+  <section id="projects" class="clearfix">
+    <div id="projects-container">
+      <div class="project">
+        <img src="images/guppypay.png" />
+        <div class="project-description-container">
+          <div class="project-label">
+            <h2 class="project-title">GuppyPay</h2>
+            <a href="https://github.com/goteammobi/guppypay" target="_blank" class="fork-link">
+              <i class="fa fa-code-fork fa-2x"></i>
+            </a>
+          </div>
+          <div class="project-description">
+            GuppyPay makes group payments easy with Venmo.
+          </div>
+        </div>
+      </div>
+      <div class="project">
+        <img src="images/pineapples.png" />
+        <div class="project-description-container">
+          <div class="project-label">
+            <h2 class="project-title">Pineapples!</h2>
+            <a href="https://github.com/harrisonchen/pineapples" target="_blank" class="fork-link">
+              <i class="fa fa-code-fork fa-2x git-link"></i>
+            </a>
+          </div>
+          <div class="project-description">
+            Pineapples! is an easy to use chrome extension that allows the user to search up something they crave in their food and will search for recipes based on the ingredient.
+          </div>
+        </div>
+      </div>
+      <div class="project">
+        <div class="project-img">
+          <img src="images/snakegame.png" />
+        </div>
+        <div class="project-description-container">
+          <div class="project-label">
+            <h2 class="project-title">Snake</h2>
+            <a href="https://github.com/harrisonchen/SnakeGame" target="_blank">
+              <i class="fa fa-code-fork fa-2x git-link"></i>
+            </a>
+            <div class="project-description">
+              Snake game made for an Embedded System class using ATMega32 microcontroller and a bunch of other stuff.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="project">
+        <div class="project-img">
+          <img src="images/brickbreaker.png" />
+        </div>
+        <div class="project-description-container">
+          <div class="project-label">
+            <h2 class="project-title">BrickBreaker</h2>
+            <a href="https://github.com/harrisonchen/BrickBreaker" target="_blank">
+              <i class="fa fa-code-fork fa-2x git-link"></i>
+            </a>
+            <div class="project-description">
+              A BrickBreaker game clone. Messed with an Arduino and an MPU-6050 3-axis gyro/accelerometer sensor.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacts">
     <h3>CONTACT</h3>
     <div>
       <a href="https://twitter.com/ChenHarrison" target="_blank">
@@ -99,17 +107,15 @@
         <i class="fa fa-envelope-o fa-2x contact-links"></i>
       </a>
     </div>
-  </div>
-
-  <canvas id="sky" style="position: fixed; z-index: -1;"></canvas>
-
-  <div id="navie"><i class="fa fa-angle-double-down fa-3x"></i><div>
+  </section>
+    
+  <!-- <canvas id="sky" style="position: fixed; z-index: -1;"></canvas> -->
   
-  <script type="text/javascript" src="javascripts/stargaze.js"></script>
-  <script type="text/javascript" src="javascripts/parallax.js"></script>
+  <!-- <script type="text/javascript" src="javascripts/stargaze.js"></script> -->
+  <!-- <script type="text/javascript" src="javascripts/parallax.js"></script> -->
   <!-- <script type="text/javascript" src="javascripts/angular.min.js"></script> -->
   <!-- <script type="text/javascript" src="javascripts/app.js"></script> -->
-  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <!-- <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script> -->
   <!-- <script type="text/javascript" src="javascripts/smooth_scroll.js"></script> -->
 
   <!-- <script type="text/javascript">
