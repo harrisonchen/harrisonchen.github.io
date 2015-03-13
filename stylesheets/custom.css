@@ -67,32 +67,36 @@ section#intro {
 }
 
 section#about {
-  width: 100vw;
   padding: 8px;
 }
 
 #about-container {
+  /*border: 1px solid white;*/
   max-width: 920px;
   margin: 0 auto;
+  padding: 8px;
 }
 
 section#projects {
-  width: 100vw;
+  padding: 8px;
 }
 
 #projects-container {
   max-width: 936px;
   margin: 0 auto;
+  /*border: 1px solid green;*/
 }
 
 .project {
   /*border: 1px solid #FFFFFF;*/
+  position: relative;
   width: 450px;
   height: 450px;
   color: #000000;
   background-color: rgba(255, 255, 255, 1);
   float: left;
-  margin: 8px;
+  margin-bottom: 8px;
+  margin-right: 16px;
   overflow: hidden;
 
   /*transition: all 0.25s ease-in-out;*/
@@ -100,13 +104,22 @@ section#projects {
 
 .project img {
   display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   width: 100%;
-  height: 300px;
+  height: 100%;
   /*border: 1px solid orange;*/
 }
 
 .project-description-container {
-  max-width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 130px;
   padding: 8px;
   /*border: 2px solid green;*/
   background-color: #FFFFFF;
@@ -205,24 +218,48 @@ section#contacts {
 
 @media all and (max-width: 960px) {
 
-  section#projects {
-    width: 100vw;
-    padding: 8px;
+  #about-container {
+    width: 740px;
+  }
+
+  #projects-container {
+    width: 766px;
   }
 
   .project {
-    width: 96%;
-    height: 450px;
-    color: #000000;
-    background-color: rgba(255, 255, 255, 1);
-    float: left;
-    margin: 0;
-    margin-bottom: 16px;
-    overflow: hidden;
+    width: 750px;
+    height: 600px;
   }
 }
 
 @media all and (max-width: 800px) {
+  #about-container {
+    width: 540px;
+  }
+
+  #projects-container {
+    width: 566px;
+  }
+
+  .project {
+    width: 550px;
+    height: 550px;
+  }
+}
+
+@media all and (max-width: 580px) {
+  #about-container {
+    width: 340px;
+  }
+
+  #projects-container {
+    width: 366px;
+  }
+
+  .project {
+    width: 350px;
+    height: 350px;
+  }
 }
 
 @media all and (max-width: 680px) {
