@@ -21,7 +21,15 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
   text-decoration: none;
-  color: white;
+  color: #0091EA;
+}
+
+a:hover {
+  color: #0071CA !important;
+}
+
+a:visited {
+  color: #0051AA;
 }
 
 .clearfix {
@@ -126,10 +134,11 @@ section#projects {
   right: 0;
   padding: 4px;
   opacity: 0.5;
-  color: #000000;
+  color: #000000 !important;
 }
 
 .fork-link:hover {
+  color: #000000 !important;
   opacity: 1;
 }
 
@@ -148,6 +157,7 @@ section#contacts {
   margin: 4px;
   margin-top: 8px;
   opacity: 0.5;
+  color: #FFFFFF;
 
   /*transition: all 0.2s ease-in-out;*/
 }
@@ -165,10 +175,12 @@ section#contacts {
   margin: 8px;
   margin-left: -25px;
 
-  transition: all 0.2s ease-in-out;
-
-  -webkit-animation: pulse 1s infinite; /* Chrome, Safari, Opera */
+  -webkit-animation: pulse 1s infinite linear; /* Chrome, Safari, Opera */
   animation: pulse 1s infinite;
+}
+
+.white-color {
+  color: #FFFFFF !important;
 }
 
 .rotate-180 {
@@ -176,13 +188,13 @@ section#contacts {
 }
 
 @-webkit-keyframes pulse {
-    from {opacity: 0.5;}
+    from {opacity: 0.15;}
     to {opacity: 1;}
 }
 
 /* Standard syntax */
 @keyframes pulse {
-    from {opacity: 0.5;}
+    from {opacity: 0.15;}
     to {opacity: 1;}
 }
 
