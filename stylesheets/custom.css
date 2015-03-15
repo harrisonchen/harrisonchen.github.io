@@ -69,21 +69,18 @@ section#about {
 }
 
 #about-container {
-  /*border: 1px solid white;*/
-  max-width: 920px;
+  max-width: 936px;
   margin: 0 auto;
-  padding: 8px;
+  /*padding: 8px;*/
   margin-bottom: 24px;
 }
 
 #projects-container {
   max-width: 936px;
   margin: 0 auto;
-  /*border: 1px solid green;*/
 }
 
 .project {
-  /*border: 1px solid #FFFFFF;*/
   position: relative;
   width: 295px;
   height: 350px;
