@@ -1,14 +1,11 @@
 html {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Cabin', sans-serif;
   padding: 0;
 }
 
 body {
   margin: 0;
   overflow-x: hidden;
-  background-color: #181818;
-  color: #FFFFFF;
-  letter-spacing: 0.05em;
 }
 
 img, div {
@@ -52,6 +49,7 @@ section#intro {
   left: 50%;
   margin-left: -175px;
   width: 350px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .name {
@@ -75,10 +73,7 @@ section#about {
   max-width: 920px;
   margin: 0 auto;
   padding: 8px;
-}
-
-section#projects {
-  padding: 8px;
+  margin-bottom: 24px;
 }
 
 #projects-container {
@@ -90,16 +85,14 @@ section#projects {
 .project {
   /*border: 1px solid #FFFFFF;*/
   position: relative;
-  width: 450px;
-  height: 450px;
+  width: 295px;
+  height: 350px;
   color: #000000;
   background-color: rgba(255, 255, 255, 1);
   float: left;
-  margin-bottom: 8px;
+  margin-bottom: 32px;
   margin-right: 16px;
   overflow: hidden;
-
-  /*transition: all 0.25s ease-in-out;*/
 }
 
 .project img {
@@ -111,7 +104,6 @@ section#projects {
   right: 0;
   width: 100%;
   height: 100%;
-  /*border: 1px solid orange;*/
 }
 
 .project-description-container {
@@ -120,20 +112,18 @@ section#projects {
   left: 0;
   right: 0;
   height: 130px;
-  padding: 8px;
-  /*border: 2px solid green;*/
+  padding-top: 8px;
   background-color: #FFFFFF;
-  /*text-align: center;*/
 }
 
 .project-label {
   position: relative;
-  /*border: 1px solid red;*/
 }
 
 .project-title {
   display: inline-block;
   border-bottom: 2px solid #000000;
+  padding-bottom: 4px;
 }
 
 .project-description {
@@ -161,18 +151,16 @@ section#contacts {
 }
 
 #contacts h3 {
-  padding: 8px;
+  padding: 4px;
   display: inline-block;
-  border-bottom: 2px solid #FFFFFF;
+  border-bottom: 2px solid #000000;
 }
 
 .contact-links {
   margin: 4px;
   margin-top: 8px;
   opacity: 0.5;
-  color: #FFFFFF;
-
-  /*transition: all 0.2s ease-in-out;*/
+  color: #000000;
 }
 
 .contact-links:hover {
@@ -188,12 +176,16 @@ section#contacts {
   margin: 8px;
   margin-left: -25px;
 
-  -webkit-animation: pulse 1s infinite linear; /* Chrome, Safari, Opera */
-  animation: pulse 1s infinite;
+  -webkit-animation: stretch-bounce 2s infinite linear; /* Chrome, Safari, Opera */
+  animation: stretch-bounce 2s infinite;
 }
 
 .white-color {
   color: #FFFFFF !important;
+}
+
+.black-color {
+  color: #000000 !important;
 }
 
 .rotate-180 {
@@ -201,14 +193,42 @@ section#contacts {
 }
 
 @-webkit-keyframes pulse {
-    from {opacity: 0.15;}
+    from {opacity: 0.55;}
     to {opacity: 1;}
 }
 
 /* Standard syntax */
 @keyframes pulse {
-    from {opacity: 0.15;}
+    from {opacity: 0.55;}
     to {opacity: 1;}
+}
+
+@-webkit-keyframes stretch-bounce {
+    0% {transform: scaleX(1);}
+    10% {transform: scaleX(2);}
+    20% {transform: scaleX(2);}
+    30% {transform: scaleX(0.6);}
+    35% {transform: scaleX(1.4);}
+    40% {transform: scaleX(0.8);}
+    45% {transform: scaleX(1.2);}
+    50% {transform: scaleX(0.9);}
+    55% {transform: scaleX(1.1);}
+    60% {transform: scaleX(1);}
+    100% {transform: scaleX(1);}
+}
+
+@keyframes stretch-bounce {
+    0% {transform: scaleX(1);}
+    10% {transform: scaleX(2);}
+    20% {transform: scaleX(2);}
+    30% {transform: scaleX(0.6);}
+    35% {transform: scaleX(1.4);}
+    40% {transform: scaleX(0.8);}
+    45% {transform: scaleX(1.2);}
+    50% {transform: scaleX(0.9);}
+    55% {transform: scaleX(1.1);}
+    60% {transform: scaleX(1);}
+    100% {transform: scaleX(1);}
 }
 
 /* Responsiveness */
@@ -229,6 +249,8 @@ section#contacts {
   .project {
     width: 750px;
     height: 600px;
+    float: none;
+    margin: 0 auto;
   }
 }
 
