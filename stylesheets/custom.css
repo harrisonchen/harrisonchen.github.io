@@ -89,11 +89,11 @@ section#intro {
   position: absolute;
   bottom: 15%;
   left: 50%;
-  margin-left: -430px;
-  width: 860px;
+  margin-left: -350px;
+  width: 700px;
   height: 500px;
-  /*border: 1px solid black;*/
   font-family: 'Cabin', sans-serif;
+  /*border: 1px solid black;*/
 }
 
 #intro img {
@@ -102,6 +102,7 @@ section#intro {
   top: 0;
   bottom: 0;
   margin: auto;
+  width: 250px;
 }
 
 #intro p {
@@ -110,8 +111,8 @@ section#intro {
   bottom: 0;
   right: 0;
   margin: auto;
-  width: 500px;
-  height: 80px;
+  width: 400px;
+  height: 95px;
   padding: 8px;
   /*border: 1px solid black;*/
 }
@@ -160,7 +161,7 @@ section#about {
   text-align: center;
 }
 
-#projects h3 {
+#projects-header {
   margin: 24px;
   padding: 4px;
   display: inline-block;
