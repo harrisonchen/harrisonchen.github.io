@@ -301,4 +301,29 @@ section#contacts {
 }
 
 @media all and (max-width: 360px) {
+  #name-container {
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    margin-left: -150px;
+    width: 300px;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .name {
+    font-size: 42px;
+  }
+
+  #about-container {
+    width: 260px;
+  }
+
+  #projects-container {
+    width: 266px;
+  }
+
+  .project {
+    width: 260px;
+    height: 320px;
+  }
 }
