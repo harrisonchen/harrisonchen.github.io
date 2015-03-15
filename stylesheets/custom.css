@@ -86,13 +86,50 @@ section#intro {
   color: #0094E5;
 }
 
-#name-container {
+#intro-container {
   position: absolute;
   bottom: 15%;
   left: 50%;
-  margin-left: -175px;
-  width: 350px;
+  margin-left: -430px;
+  width: 860px;
+  height: 500px;
   font-family: 'Open Sans', sans-serif;
+}
+
+#intro img {
+  border-radius: 50% 50%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+#intro p {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 500px;
+  height: 110px;
+  padding: 8px;
+}
+
+#intro p a {
+  color: #0094E5;
+}
+
+#intro p .left-arrow {
+  opacity: 0;
+  margin-left: 8px;
+  color: #0094E5;
+
+  transition: all 0.1s linear;
+}
+
+#intro p a:hover + .left-arrow {
+  opacity: 1;
+  margin-left: 0;
 }
 
 .name {
@@ -210,6 +247,7 @@ section#contacts {
 #navie {
   position: absolute;
   text-align: center;
+  opacity: 0.5;
   bottom: 0;
   left: 50%;
   width: 50px;
@@ -218,6 +256,10 @@ section#contacts {
 
   -webkit-animation: stretch-bounce 2s infinite linear; /* Chrome, Safari, Opera */
   animation: stretch-bounce 2s infinite;
+}
+
+#navie:hover {
+  opacity: 1;
 }
 
 .white-color {
