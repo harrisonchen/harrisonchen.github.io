@@ -95,7 +95,7 @@ footer {
     top: 0;
     left: 0;
     padding-top: 16px;
-    border-top: 1px solid $navigational-content;
+    border-top: 1px solid rgba(0, 0, 0, 0);
 
     &:hover {
       border-top: 1px solid $theme-color;
@@ -111,10 +111,10 @@ footer {
       float: right;
       margin-left: 16px;
       padding-top: 16px;
-      border-top: 1px solid #A0A0A0;
+      border-top: 1px solid rgba(0, 0, 0, 0);
 
       &:hover {
-        border-top: 1px solid #000000;
+        border-top: 1px solid $theme-color;
       }
     }
   }
@@ -328,6 +328,12 @@ footer {
 }
 
 @media all and (max-width: 580px) {
+  .navbar {
+    li {
+      font-size: 12px;
+    }
+  }
+
   #intro-container {
     width: 400px;
     height: 270px;
@@ -359,6 +365,16 @@ footer {
 }
 
 @media all and (max-width: 400px) {
+  .navbar {
+    h3 {
+      font-size: 14px;
+    }
+
+    li {
+      font-size: 10px;
+    }
+  }
+
   #intro-container {
     width: 300px;
     height: 325px;
@@ -390,6 +406,15 @@ footer {
 }
 
 @media all and (max-width: 360px) {
+  .navbar {
+    h3 {
+      font-size: 12px;
+    }
+
+    li {
+      font-size: 8px;
+    }
+  }
   #projects-container {
     width: 266px;
   }
