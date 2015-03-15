@@ -36,6 +36,20 @@ section#intro {
   height: 100vh;
 }
 
+footer {
+  width: 1080px;
+  margin: 0 auto;
+  color: #A0A0A0;
+
+  a {
+    color: #A0A0A0;
+  }
+}
+
+footer a:hover {
+  color: #0094E5;
+}
+
 .navbar {
   position: relative;
   width: 1080px;
@@ -89,8 +103,8 @@ section#intro {
   position: absolute;
   bottom: 15%;
   left: 50%;
-  margin-left: -350px;
-  width: 700px;
+  margin-left: -360px;
+  width: 720px;
   height: 500px;
   font-family: 'Cabin', sans-serif;
   /*border: 1px solid black;*/
@@ -111,8 +125,8 @@ section#intro {
   bottom: 0;
   right: 0;
   margin: auto;
-  width: 400px;
-  height: 95px;
+  width: 420px;
+  height: 130px;
   padding: 8px;
   /*border: 1px solid black;*/
 }
@@ -229,7 +243,7 @@ section#about {
   position: absolute;
   top: 0;
   right: 0;
-  padding: 4px;
+  /*padding: 4px;*/
   opacity: 0.5;
   color: #000000 !important;
 }
@@ -260,6 +274,7 @@ section#contacts {
 
 .contact-links:hover {
   opacity: 1;
+  color: #0094E5;
 }
 
 #navie {
@@ -337,7 +352,6 @@ section#contacts {
 }
 
 @media all and (max-width: 960px) {
-
   #about-container {
     width: 740px;
   }
@@ -404,19 +418,6 @@ section#contacts {
 }
 
 @media all and (max-width: 360px) {
-  #name-container {
-    position: absolute;
-    bottom: 15%;
-    left: 50%;
-    margin-left: -150px;
-    width: 300px;
-    font-family: 'Open Sans', sans-serif;
-  }
-
-  .name {
-    font-size: 42px;
-  }
-
   #about-container {
     width: 260px;
   }
