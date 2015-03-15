@@ -248,6 +248,7 @@ section#contacts {
     height: 600px;
     float: none;
     margin: 0 auto;
+    margin-bottom: 32px;
   }
 }
 
@@ -282,6 +283,21 @@ section#contacts {
 }
 
 @media all and (max-width: 680px) {
+}
+
+@media all and (max-width: 400px) {
+  #about-container {
+    width: 320px;
+  }
+
+  #projects-container {
+    width: 326px;
+  }
+
+  .project {
+    width: 320px;
+    height: 320px;
+  }
 }
 
 @media all and (max-width: 360px) {
