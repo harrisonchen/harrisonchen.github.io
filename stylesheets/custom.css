@@ -6,27 +6,20 @@ html {
 body {
   margin: 0;
   overflow-x: hidden;
+  padding: 8px;
+  padding-top: 24px;
 }
 
-img, div {
+h1, h2, h3, h4, h5, h6, img, div, ul, li {
   margin: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  margin: 0;
+ul {
+  list-style: none;
 }
 
 a {
   text-decoration: none;
-  color: #0091EA;
-}
-
-a:hover {
-  color: #0071CA !important;
-}
-
-a:visited {
-  color: #0051AA;
 }
 
 .clearfix {
@@ -41,6 +34,56 @@ a:visited {
 section#intro {
   width: 100vw;
   height: 100vh;
+}
+
+.navbar {
+  position: relative;
+  font-family: 'Open Sans', sans-serif;
+  width: 1080px;
+  margin: 0 auto;
+  color: #A0A0A0;
+}
+
+.horizontal-bar {
+  border-top: 1px solid #A0A0A0;
+}
+
+.navbar h3 {
+  position: absolute;
+  float: left;
+  top: 0;
+  left: 0;
+  padding-top: 16px;
+  border-top: 1px solid #A0A0A0;
+}
+
+.navbar h3:hover {
+  border-top: 1px solid #0094E5;
+}
+
+.navbar ul {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.navbar li {
+  float: right;
+  margin-left: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #A0A0A0;
+}
+
+.navbar li:hover {
+  border-top: 1px solid #0094E5;
+}
+
+.navbar a {
+  color: #A0A0A0;
+}
+
+.navbar a:hover {
+  color: #0094E5;
 }
 
 #name-container {
