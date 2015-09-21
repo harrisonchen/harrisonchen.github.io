@@ -1,4 +1,4 @@
-$main-font: 'Cabin', sans-serif;
+$main-font: Arial, sans-serif;
 $theme-color: #000000;
 $theme-color-light: lighten($theme-color, 60%);
 $light-gray: #A0A0A0;
@@ -13,6 +13,7 @@ body {
   margin: 0;
   overflow-x: hidden;
   padding-top: 24px;
+  height: 100%;
 }
 
 h1, h2, h3, h4, h5, h6,
@@ -28,13 +29,16 @@ a {
   text-decoration: none;
 }
 
-.clearfix {
-    display: inline-block;
-    width: 100%;
-}
-
 .center {
   text-align: center;
+}
+
+.wrapper {
+  position:relative;
+  max-width: 1080px;
+  width: 92vw;
+  min-height: 100%;
+  margin: 0 auto;
 }
 
 .horizontal-bar {
@@ -54,13 +58,25 @@ a {
   color: #000000 !important;
 }
 
+section .label {
+  padding: 4px;
+  margin: 8px;
+  margin-top: 16px;
+  display: inline-block;
+  border-bottom: 1px solid #000000;
+}
+
 /* Footer */
 
 footer {
+  position: absolute;
   max-width: 1080px;
   width: 92vw;
   margin: 0 auto;
   color: $light-gray;
+  bottom: 0;
+  left: 0;
+  right: 0;
 
   a {
     color: $navigational-content;
@@ -77,6 +93,7 @@ footer {
   position: relative;
   max-width: 1080px;
   width: 92vw;
+  height: 50px;
   margin: 0 auto;
   color: $navigational-content;
 
@@ -121,15 +138,14 @@ footer {
 
 /* Introductory Section */
 
-#intro {
-  width: 100vw;
-  height: 100vh;
+#about {
+  position: relative;
+  height: 260px;
+  padding: 16px;
 }
 
-#intro-container {
+#about-container {
   position: absolute;
-  top: 0;
-  bottom: 0;
   left: 50%;
   margin: auto;
   margin-left: -360px;
@@ -144,6 +160,7 @@ footer {
     bottom: 0;
     margin: auto;
     width: 250px;
+    height: 250px;
   }
 
   p {
@@ -256,18 +273,6 @@ footer {
 
 /* Contacts Section */
 
-#contacts {
-  height: 200px;
-  text-align: center;
-
-  h3 {
-    padding: 4px;
-    margin-bottom: 24px;
-    display: inline-block;
-    border-bottom: 2px solid #000000;
-  }
-}
-
 .contact-links {
   padding-left: 8px;
   padding-right: 8px;
@@ -299,12 +304,13 @@ footer {
 }
 
 @media all and (max-width: 800px) {
-  #intro-container {
+  #about-container {
     width: 580px;
     margin-left: -290px;
 
     img {
       width: 200px;
+      height: 200px;
     }
 
     p {
@@ -333,7 +339,7 @@ footer {
     }
   }
 
-  #intro-container {
+  #about-container {
     width: 400px;
     height: 270px;
     margin-left: -200px;
@@ -343,6 +349,7 @@ footer {
       left: 0;
       right: 0;
       width: 100px;
+      height: 100px;
     }
 
     p {
@@ -374,7 +381,7 @@ footer {
     }
   }
 
-  #intro-container {
+  #about-container {
     width: 300px;
     height: 325px;
     margin-left: -150px;
@@ -384,6 +391,7 @@ footer {
       left: 0;
       right: 0;
       width: 100px;
+      height: 100px;
     }
 
     p {

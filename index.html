@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html ng-app="app">
 <head>
-  <title>Harrison Chen</title>
+  <title>NektarLyfe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link href='http://fonts.googleapis.com/css?family=Cabin' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="stylesheets/custom.min.css">
 </head>
 <body>
+  <div class="wrapper">
   <div class="navbar">
     <div class="horizontal-bar"></div>
-    <a href="#"><h3>HARRISON CHEN</h3></a>
+    <a href="#"><h3>NEKTARLYFE</h3></a>
     <ul>
       <a href="#contacts"><li>CONTACT</li></a>
-      <a href="http://www.harrisonchen.me/blog/" target="_blank"><li>BLOG</li></a>
-      <a href="#projects"><li>PROJECTS</li></a>
-      <a href="#"><li>HOME</li></a>
+      <a href="http://www.nektarlyfe.com/blog/"><li>BLOG</li></a>
+      <a href="http://www.github.com/harrisonchen"><li>PROJECTS</li></a>
+      <a href="#about"><li>ABOUT</li></a>
     </ul>
   </div>
 
-  <section id="intro">
-    <div id="intro-container">
-      <img src="images/profile_pic.png" />
+  <img style="width: 100%; height: 40%;"src="images/bali-island.jpg" />
+
+  <section id="about">
+    <div id="about-container">
+      <img src="images/headshot.png" />
       <p>
         Hi, I'm Harrison!
         I am a computer engineer studying at UC Riverside.
@@ -29,112 +31,36 @@
         I spend a lot of my free time developing Rails and iOS applications.
         I also have a taste in design.
         I enjoy working out, mountain biking, rock climbing, and adventuring!<br /><br />
-        Oh and I <a href="http://www.harrisonchen.me/blog/" target="_blank">blog <i class="fa fa-pencil"></i></a> <i class="fa fa-long-arrow-left left-arrow"></i>
+        <!-- Oh and I <a href="http://www.nektarlyfe.com/blog/" target="_blank">blog <i class="fa fa-pencil"></i></a> <i class="fa fa-long-arrow-left left-arrow"></i> -->
       </p>
     </div>
   </section>
 
-  <!-- <a href="#about"><div id="navie"><i class="fa fa-angle-double-down fa-3x black-color"></i></div></a> -->
-
-  <section id="projects" class="clearfix">
-    <div class="center-wrap">
-      <h3 id="projects-header">PROJECTS</h3>
-    </div>
-    <div id="projects-container">
-      <div class="project">
-        <img src="images/guppypay-mockup.png" />
-        <div class="project-description-container">
-          <div class="project-label">
-            <h4 class="project-title">GUPPYPAY</h4>
-            <a href="https://github.com/goteammobi/guppypay" target="_blank" class="fork-link">
-              <i class="fa fa-code-fork fa-2x"></i>
-            </a>
-          </div>
-          <div class="project-description">
-            GuppyPay makes group payments easy with Venmo.
-          </div>
-        </div>
-      </div>
-      <div class="project">
-        <img src="images/pineapples.png" />
-        <div class="project-description-container">
-          <div class="project-label">
-            <h4 class="project-title">PINEAPPLES!</h4>
-            <a href="https://github.com/harrisonchen/pineapples" target="_blank" class="fork-link">
-              <i class="fa fa-code-fork fa-2x git-link"></i>
-            </a>
-          </div>
-          <div class="project-description">
-            Pineapples! is an easy to use chrome extension that allows the user to search up something they crave in their food and will search for recipes based on the ingredient.
-          </div>
-        </div>
-      </div>
-      <div class="project">
-        <div class="project-img">
-          <img src="images/snakegame.png" />
-        </div>
-        <div class="project-description-container">
-          <div class="project-label">
-            <h4 class="project-title">SNAKE</h4>
-            <a href="https://github.com/harrisonchen/SnakeGame" target="_blank" class="fork-link">
-              <i class="fa fa-code-fork fa-2x"></i>
-            </a>
-            <div class="project-description">
-              Snake game made for an Embedded System class using ATMega32 microcontroller and a bunch of other stuff.
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="project">
-        <div class="project-img">
-          <img src="images/brickbreaker.png" />
-        </div>
-        <div class="project-description-container">
-          <div class="project-label">
-            <h4 class="project-title">BRICKBREAKER</h4>
-            <a href="https://github.com/harrisonchen/BrickBreaker" target="_blank" class="fork-link">
-              <i class="fa fa-code-fork fa-2x"></i>
-            </a>
-            <div class="project-description">
-              A BrickBreaker game clone. Messed with an Arduino and an MPU-6050 3-axis gyro/accelerometer sensor.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section id="contacts">
-    <h3>CONTACT</h3>
-    <div>
-      <a href="https://twitter.com/ChenHarrison" target="_blank">
-        <i class="fa fa-twitter fa-2x contact-links"></i>
-      </a>
-      <a href="https://github.com/harrisonchen" target="_blank">
-        <i class="fa fa-github fa-2x contact-links"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/harrisonwchen" target="_blank">
-        <i class="fa fa-linkedin fa-2x contact-links"></i>
-      </a>
-      <a href="mailto:harrisonxchen@gmail.com" target="_top">
-        <i class="fa fa-envelope-o fa-2x contact-links"></i>
-      </a>
+    <div class="center">
+      <div class="label">CONTACT</div>
+      <div>
+        <a href="https://twitter.com/ChenHarrison" target="_blank">
+          <i class="fa fa-twitter fa-2x contact-links"></i>
+        </a>
+        <a href="https://github.com/harrisonchen" target="_blank">
+          <i class="fa fa-github fa-2x contact-links"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/harrisonwchen" target="_blank">
+          <i class="fa fa-linkedin fa-2x contact-links"></i>
+        </a>
+        <a href="mailto:harrisonxchen@gmail.com" target="_top">
+          <i class="fa fa-envelope-o fa-2x contact-links"></i>
+        </a>
+      </div>
     </div>
   </section>
+  </div>
 
-  <footer>
+<!--   <footer>
     <div class="horizontal-bar"></div>
-    <a href="#" style="float: left;"><p>Harrison Chen &middot; 2015</p></a>
-    <a href="#" style="float: right;"><p>Built with SCSS</p></a>
-  </footer>
-    
-  <script src="javascripts/ios-vp-fix.js"></script>
-  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-  <script type="text/javascript" src="javascripts/smooth_scroll.js"></script>
-
-  <script type="text/javascript">
-    $('a').smoothScroll();
-  </script>
+    <a href="#" style="float: left;"><p>NEKTARLYFE &middot; 2015</p></a>
+  </footer> -->
 
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
